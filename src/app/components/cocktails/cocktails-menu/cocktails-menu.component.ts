@@ -18,7 +18,7 @@ export class CocktailsMenuComponent implements OnInit {
     this.backendAccessService.getCocktailsMenu().subscribe((cocktails) => {
       this.cocktails = cocktails;
     });
-    this.isMixologistMode = JSON.parse(sessionStorage.getItem("isMixologistMode") || "false");
+    this.isMixologistMode = true;
   }
 
   scrollToCocktail(cocktailTitle: string) {

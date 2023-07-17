@@ -1,40 +1,37 @@
 import { Injectable } from '@angular/core';
 import { Button } from '../models/main-menu-buttons';
+import { ButtonsByUrlLookupTable } from 'src/models/lookup-table';
+import { AppRoutes } from '../enums/app-routes';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class MenuButtonsProviderService {
-  buttonsRoutes = {
-    welcomeScreenButtons: [],
-    dishMenuButtons: [],
-    dishMenuButtons2: [],
-    newRecipeButtons: [],
-  }
 
+  buttonClasses = 'btn btn-primary';
 
   welcomeScreenButtons: Button[] = [
     {
-      route: 'menus-menu',
+      route: AppRoutes.MenusMenuRoute,
       navigateData: 'dishMenuButtons',
-      classes: 'btn btn-primary',
+      classes: this.buttonClasses,
       text: 'Menus',
     },
     {
-      route: 'all-items-list',
+      route: AppRoutes.TableRoute,
       tableFilters: '',
-      classes: 'btn btn-primary',
+      classes: this.buttonClasses,
       text: 'List of all recipes'
     },
     {
-      route: 'add-new-recipe-menu',
+      route: AppRoutes.NewRecipeMenuRoute,
       navigateData: 'newRecipeButtons',
-      classes: 'btn btn-primary',
+      classes: this.buttonClasses,
       text: 'Add new recipe',
     },
     {
-      route: 'settings',
+      route: AppRoutes.SettingsRoute,
       navigateData: 'settingsButtons',
       classes: 'btn btn-secondary',
       text: 'Settings',
@@ -43,15 +40,15 @@ export class MenuButtonsProviderService {
 
   dishMenuButtons: Button[] = [
     {
-      route: 'view-menus-menu',
+      route: AppRoutes.ViewMenusMenuRoute,
       navigateData: 'dishMenuButtons2',
-      classes: 'btn btn-primary',
+      classes: this.buttonClasses,
       text: 'View menus',
     },
     {
-      route: 'create-new-menus-menu',
+      route: AppRoutes.CreateNewMenusMenuRoute,
       navigateData: 'dishMenuButtons2',
-      classes: 'btn btn-primary',
+      classes: this.buttonClasses,
       text: 'Create new menu',
     },
   ]
@@ -59,44 +56,69 @@ export class MenuButtonsProviderService {
   dishMenuButtons2: Button[] = [
     {
       tableFilters: '',
-      route: 'all-items-list',
-      classes: 'btn btn-primary',
+      route: AppRoutes.TableRoute,
+      classes: this.buttonClasses,
       text: 'Alcohol'
     },
     {
       tableFilters: '',
-      route: 'all-items-list',
-      classes: 'btn btn-primary',
+      route: AppRoutes.TableRoute,
+      classes: this.buttonClasses,
       text: 'Food'
     },
     {
       tableFilters: '',
-      route: 'all-items-list',
-      classes: 'btn btn-primary',
+      route: AppRoutes.TableRoute,
+      classes: this.buttonClasses,
       text: 'All'
     },
     {
       tableFilters: '',
-      route: 'all-items-list',
-      classes: 'btn btn-primary',
+      route: AppRoutes.TableRoute,
+      classes: this.buttonClasses,
       text: 'Combined'
     }
   ]
 
   newRecipeButtons: Button[] = [
     {
-      route: 'create-new-item',
-      classes: 'btn btn-primary',
+      route: AppRoutes.NewItemRoute,
+      classes: this.buttonClasses,
       text: 'Alcohol'
     },
     {
-      route: 'create-new-item',
-      classes: 'btn btn-primary',
+      route: AppRoutes.NewItemRoute,
+      classes: this.buttonClasses,
       text: 'Food'
     },
   ]
 
-  getButtonsByUrl() {
+  settingsButtons: Button[] = [
+    {
+      route: AppRoutes.NewItemRoute,
+      classes: this.buttonClasses,
+      text: 'Alcohol'
+    },
+    {
+      route: AppRoutes.NewItemRoute,
+      classes: this.buttonClasses,
+      text: 'Food'
+    },
+  ]
 
+  buttonsByUrlLookupTable: ButtonsByUrlLookupTable = {
+    'menus-menu': this.dishMenuButtons,
+    'view-menus-menu': this.dishMenuButtons2,
+    'create-new-menus-menu': this.dishMenuButtons2,
+    'add-new-recipe-menu': this.newRecipeButtons,
+    'settings': this.settingsButtons
+  };
+
+  getButtonsByUrl(url: string) {
+    if (url) {
+      return this.buttonsByUrlLookupTable[url];
+    } else {
+      return this.welcomeScreenButtons;
+    }
   }
 }

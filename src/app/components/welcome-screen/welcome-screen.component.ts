@@ -8,5 +8,5 @@ import { fader } from 'src/app/route-animations';
   templateUrl: './welcome-screen.component.html',
   styleUrls: ['./welcome-screen.component.scss']
 })
-export class WelcomeScreenComponent {
-}
+
+export class WelcomeScreenComponent { }

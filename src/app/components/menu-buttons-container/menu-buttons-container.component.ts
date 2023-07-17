@@ -17,17 +17,10 @@ export class MenuButtonsContainerComponent implements OnInit, OnDestroy {
   location = inject(Location);
   menuButtonsProviderService = inject(MenuButtonsProviderService);
   subscription = new Subscription();
-  buttons: any = [];
+  buttons: Button[] = [];
 
   ngOnInit() {
-    console.log(this.location.path())
-    if (this.location.path().length > 0) {
-      // @ts-ignore
-      this.buttons = this.menuButtonsProviderService[this.location.path()];
-    } else {
-      this.buttons = this.menuButtonsProviderService.welcomeScreenButtons
-
-    }
+    this.buttons = this.menuButtonsProviderService.getButtonsByUrl(this.location.path().replace(/^\/+|\/+$/g, ''));
   }
 
   ngOnDestroy() {
@@ -35,17 +28,10 @@ export class MenuButtonsContainerComponent implements OnInit, OnDestroy {
   }
 
   navigateToRoute(buttonData: Button) {
-    console.log(buttonData);
-    this.createHistory(buttonData)
+    this.router.navigate([buttonData.route])
     if (buttonData.navigateData) {
       // @ts-ignore
       this.buttons = this.menuButtonsProviderService[buttonData.navigateData];
     }
-  }
-
-  createHistory(buttonData: Button) {
-    this.location.replaceState(buttonData.route);
-    window.history.pushState(null, '', '/' + buttonData.route)
-
   }
 }
