@@ -14,7 +14,7 @@ export class BackendAccessService {
   constructor(private http: HttpClient) { }
 
 
-  getCocktailsList(): Observable<Cocktail[]> {
+  getCocktailsMenu(): Observable<Cocktail[]> {
     return this.http.get('./assets/data.json').pipe(
       map((response: any) => response.data)
     );

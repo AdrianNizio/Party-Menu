@@ -1,21 +1,21 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { BackendAccessService } from '../services/backend-access-service.service';
+import { fader } from 'src/app/route-animations';
+import { BackendAccessService } from 'src/app/services/backend-access-service.service';
 import { Cocktail } from 'src/models/cocktail';
-import { fader } from '../route-animations';
 
 @Component({
   animations: [fader],
-  selector: 'app-cocktails-list',
-  templateUrl: './cocktails-list.component.html',
-  styleUrls: ['./cocktails-list.component.scss']
+  selector: 'app-cocktails-menu',
+  templateUrl: './cocktails-menu.component.html',
+  styleUrls: ['./cocktails-menu.component.scss']
 })
-export class CocktailsListComponent implements OnInit {
+export class CocktailsMenuComponent implements OnInit {
   backendAccessService = inject(BackendAccessService);
   cocktails: Cocktail[] = [];
   isMixologistMode: boolean = false;
 
   ngOnInit() {
-    this.backendAccessService.getCocktailsList().subscribe((cocktails) => {
+    this.backendAccessService.getCocktailsMenu().subscribe((cocktails) => {
       this.cocktails = cocktails;
     });
     this.isMixologistMode = JSON.parse(sessionStorage.getItem("isMixologistMode") || "false");
