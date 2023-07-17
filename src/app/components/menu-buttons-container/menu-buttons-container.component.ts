@@ -17,9 +17,11 @@ export class MenuButtonsContainerComponent implements OnInit, OnDestroy {
   welcomeScreenButtons = [
     {
       buttonFunction: 'navigateToRoute',
-      route: 'cocktails',
+      route: 'menus-menu',
+      navigateData: 'dishMenuButtons',
       classes: 'btn btn-primary',
-      text: 'Menu'
+      text: 'Menus',
+      type: 'navigateWithinMenuButtons'
     },
     {
       buttonFunction: 'navigateToTable',
@@ -31,14 +33,18 @@ export class MenuButtonsContainerComponent implements OnInit, OnDestroy {
     {
       buttonFunction: 'navigateToRoute',
       route: 'add-new-recipe-menu',
+      navigateData: 'newRecipeButtons',
       classes: 'btn btn-primary',
-      text: 'Add new recipe'
+      text: 'Add new recipe',
+      type: 'navigateWithinMenuButtons'
     },
     {
       buttonFunction: 'navigateToRoute',
       route: 'settings',
+      navigateData: 'settingsButtons',
       classes: 'btn btn-secondary',
-      text: 'Settings'
+      text: 'Settings',
+      type: 'navigateWithinMenuButtons'
     }
   ]
 
@@ -46,14 +52,18 @@ export class MenuButtonsContainerComponent implements OnInit, OnDestroy {
     {
       buttonFunction: 'navigateToRoute',
       route: 'view-menus-menu',
+      navigateData: 'dishMenuButtons2',
       classes: 'btn btn-primary',
-      text: 'View menus'
+      text: 'View menus',
+      type: 'navigateWithinMenuButtons'
     },
     {
       buttonFunction: 'navigateToRoute',
       route: 'create-new-menus-menu',
+      navigateData: 'dishMenuButtons2',
       classes: 'btn btn-primary',
-      text: 'Create new menu'
+      text: 'Create new menu',
+      type: 'navigateWithinMenuButtons'
     },
   ]
 
