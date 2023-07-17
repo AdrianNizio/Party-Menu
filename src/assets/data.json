@@ -1,0 +1,587 @@
+{
+    "data": [
+        {
+            "title": "Whiskey Sour",
+            "ingredients": [
+                {
+                    "ammount": "50 ml",
+                    "name": "Whiskey"
+                },
+                {
+                    "ammount": "22 ml",
+                    "name": "Sok z cytryny"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Syrop cukrowy"
+                },
+                {
+                    "ammount": "1 'jajko'",
+                    "name": "Aquafaba"
+                },
+                {
+                    "ammount": "Splash",
+                    "name": "Bitter"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Bitter"
+                ],
+                "glass": "Szklanka do whiskey 300 ml Ikea 002.087.88",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/whiskeysour.png"
+        },
+        {
+            "title": "Gin Fizz",
+            "ingredients": [
+                {
+                    "ammount": "50 ml",
+                    "name": "Gin"
+                },
+                {
+                    "ammount": "30 ml",
+                    "name": "Sok z cytryny"
+                },
+                {
+                    "ammount": "22 ml",
+                    "name": "Syrop cukrowy"
+                },
+                {
+                    "ammount": "1 jajko",
+                    "name": "Aquafaba"
+                },
+                {
+                    "ammount": "Dobicie",
+                    "name": "Woda gazowana"
+                }
+            ],
+            "creator": {
+                "garnish": [],
+                "glass": "Collins Szklanka 310 ml Ikea 102.704.78",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/ginfizz.png"
+        },
+        {
+            "title": "Pornstar Martini",
+            "ingredients": [
+                {
+                    "ammount": "50 ml",
+                    "name": "Rum/Wódka"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Triple Sec"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Sok z żurawiny"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Sok z limonki"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Plaster limonki"
+                ],
+                "glass": "Margarita",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/pornstarmartini.png"
+        },
+        {
+            "title": "Cosmopolitan",
+            "ingredients": [
+                {
+                    "ammount": "50 ml",
+                    "name": "Rum/Wódka"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Likier z Marakuji"
+                },
+                {
+                    "ammount": "30 ml",
+                    "name": "Puree z Marakuji"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Sok z limonki"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Syrop Waniliowy"
+                },
+                {
+                    "ammount": "Dobicie",
+                    "name": "Woda gazowana"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Plaster limonki"
+                ],
+                "glass": "Margarita",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/cosmopolitan.png"
+        },
+        {
+            "title": "Rodos wersja bieda",
+            "ingredients": [
+                {
+                    "ammount": "50 ml",
+                    "name": "Gin"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Sok z cytryny"
+                },
+                {
+                    "ammount": "10 ml",
+                    "name": "Syrop z bzu"
+                },
+                {
+                    "ammount": "10 ml",
+                    "name": "Syrop cukrowy"
+                },
+                {
+                    "ammount": "4 liście",
+                    "name": "Bazylia"
+                },
+                {
+                    "ammount": "1",
+                    "name": "Piana limonkowa"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Liść bazylii"
+                ],
+                "glass": "Pokal do wina Ikea 102.150.95",
+                "notes": [
+                    "Pianka limonkowa: 3 porcje wody, 1 porcja cukru, 3 porcje cytryny, 0.5 porcji jajka, 0.1 porcji żelatyny"
+                ]
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/rodos.png"
+        },
+        {
+            "title": "Miłość",
+            "ingredients": [
+                {
+                    "ammount": "50 ml",
+                    "name": "Rum"
+                },
+                {
+                    "ammount": "20 ml",
+                    "name": "Amaro Montenegro"
+                },
+                {
+                    "ammount": "Splash",
+                    "name": "Bitter"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Sok z żurawiny"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Sok z cytryny"
+                },
+                {
+                    "ammount": "50 ml",
+                    "name": "Syrop cukrowy"
+                },
+                {
+                    "ammount": "1 jajko",
+                    "name": "Aquafaba"
+                },
+                {
+                    "ammount": "Dobicie",
+                    "name": "Woda gazowana"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Gałązka czegoś sztywnego zielonego"
+                ],
+                "glass": "Szklanka 310ml Ikea 002.869.17",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/milosc.png"
+        },
+        {
+            "title": "Królowa Kier",
+            "ingredients": [
+                {
+                    "ammount": "50 ml",
+                    "name": "Rum"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Puree z Marakuji"
+                },
+                {
+                    "ammount": "10 ml",
+                    "name": "Syrop pomarańczowy"
+                },
+                {
+                    "ammount": "1",
+                    "name": "Kardamon"
+                }
+            ],
+            "creator": {
+                "garnish": [],
+                "glass": "Margarita",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/krolowakier.png"
+        },
+        {
+            "title": "Ostatni",
+            "ingredients": [
+                {
+                    "ammount": "50 ml",
+                    "name": "Wódka z trawą"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Syrop z brązowego cukru"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Sok z cytryny"
+                },
+                {
+                    "ammount": "5 ml",
+                    "name": "Palone masło"
+                },
+                {
+                    "ammount": "Splash",
+                    "name": "Bitter"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Sezamek",
+                    "Starta skórka pomarańczy na sezamku"
+                ],
+                "glass": "Szklanka PRL z koszyczkiem",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/ostatni.png"
+        },
+        {
+            "title": "Milk-Shake",
+            "ingredients": [
+                {
+                    "ammount": "50 ml",
+                    "name": "Rum"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Sok z ananasa"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Syrop cynamonowy"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Śmietanka"
+                },
+                {
+                    "ammount": "Dobicie",
+                    "name": "Bita śmietana"
+                },
+                {
+                    "ammount": "Splash",
+                    "name": "Syrop wiśniowy"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Wisienka"
+                ],
+                "glass": "Hurricane lub podobny",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/milkshake.png"
+        },
+        {
+            "title": "Kaskader",
+            "ingredients": [
+                {
+                    "ammount": "30 ml",
+                    "name": "Rum/Wódka"
+                },
+                {
+                    "ammount": "30 ml",
+                    "name": "Tequila"
+                },
+                {
+                    "ammount": "30 ml",
+                    "name": "Gin"
+                },
+                {
+                    "ammount": "30 ml",
+                    "name": "Sok z grejpfruta"
+                },
+                {
+                    "ammount": "10",
+                    "name": "Syrop cynamonowy"
+                },
+                {
+                    "ammount": "15",
+                    "name": "Sok z żurawiny"
+                },
+                {
+                    "ammount": "90",
+                    "name": "Cydr"
+                },
+                {
+                    "ammount": "Splash",
+                    "name": "Bitter"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Suszone pomarańcze w kostce"
+                ],
+                "glass": "Collins Szklanka 310 ml Ikea 102.704.78",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/kaskader.png"
+        },
+        {
+            "title": "Bermudy",
+            "ingredients": [
+                {
+                    "ammount": "50 ml",
+                    "name": "Rum"
+                },
+                {
+                    "ammount": "3/4 kiwi do shakera, 1/4 w plastrach do szklanki",
+                    "name": "Świeże kiwi"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Syrop z agawy"
+                },
+                {
+                    "ammount": "5 ml",
+                    "name": "Sok z cytryny"
+                },
+                {
+                    "ammount": "4-6",
+                    "name": "Liście mięty"
+                },
+                {
+                    "ammount": "5 - 10 ml",
+                    "name": "Likier melonowy"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Suszone kiwi"
+                ],
+                "glass": "Szklanka do whiskey 300 ml Ikea 002.087.88",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/bermudy.png"
+        },
+        {
+            "title": "Alicja",
+            "ingredients": [
+                {
+                    "ammount": "50 ml",
+                    "name": "Whiskey"
+                },
+                {
+                    "ammount": "100 - 150 ml",
+                    "name": "Herbata Blue Milk Oolong"
+                },
+                {
+                    "ammount": "25 ml",
+                    "name": "Sok z cytryny"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Herbatnik"
+                ],
+                "glass": "Szklanka do whiskey 300 ml Ikea 002.087.88",
+                "notes": [
+                    "Sok z cytryny obok, dla emocji przy zmianie koloru"
+                ]
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/alicja.png"
+        },
+        {
+            "title": "Mai tai",
+            "ingredients": [
+                {
+                    "ammount": "60 ml",
+                    "name": "Rum"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Triple Sec"
+                },
+                {
+                    "ammount": "30 ml",
+                    "name": "Sok z limonki"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Syrop migdałowy"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Czarny rum"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Liść mięty",
+                    "Plaster limonki",
+                    "Wisienka"
+                ],
+                "glass": "Szklanka 350 ml Ikea 102.704.78",
+                "notes": [
+                    "Czarny rum to float, więc nie do shakera, tylko łyżką na góre"
+                ]
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/maitai.png"
+        },
+        {
+            "title": "Bali Bali",
+            "ingredients": [
+                {
+                    "ammount": "22 ml",
+                    "name": "Czarny rum"
+                },
+                {
+                    "ammount": "22 ml",
+                    "name": "Rum"
+                },
+                {
+                    "ammount": "22 ml",
+                    "name": "Whiskey z wanilią"
+                },
+                {
+                    "ammount": "22 ml",
+                    "name": "Gin"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Syrop migdałowy"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Likier z Marakuji"
+                },
+                {
+                    "ammount": "22 ml",
+                    "name": "Sok z ananasa"
+                },
+                {
+                    "ammount": "22 ml",
+                    "name": "Sok z pomarańczy"
+                },
+                {
+                    "ammount": "122 ml",
+                    "name": "Sok z limonki"
+                },
+                {
+                    "ammount": "8 ml",
+                    "name": "Syrop cukrowy"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Liście ananasa"
+                ],
+                "glass": "Collins Szklanka 350 ml Ikea 102.704.78",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/balibali.png"
+        },
+        {
+            "title": "Winter Bro",
+            "ingredients": [
+                {
+                    "ammount": "30 ml",
+                    "name": "Whiskey"
+                },
+                {
+                    "ammount": "22 ml",
+                    "name": "Ruby Port"
+                },
+                {
+                    "ammount": "22 ml",
+                    "name": "Sok z cytryny"
+                },
+                {
+                    "ammount": "15 ml",
+                    "name": "Syrop z brązowego cukru"
+                },
+                {
+                    "ammount": "1 jajko",
+                    "name": "Aquafaba"
+                }
+            ],
+            "creator": {
+                "garnish": [
+                    "Starta gałka muszkatołowa"
+                ],
+                "glass": "Kieliszek do wina ok 300 ml Ikea 404.728.99",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/winterbro.png"
+        },
+        {
+            "title": "Cosmonaut",
+            "ingredients": [
+                {
+                    "ammount": "60 ml",
+                    "name": "Gin"
+                },
+                {
+                    "ammount": "22 ml",
+                    "name": "Sok z cytryny"
+                },
+                {
+                    "ammount": "1 łyżka barowa",
+                    "name": "Konfitura malinowa"
+                }
+            ],
+            "creator": {
+                "garnish": [],
+                "glass": "Kieliszek do wina ok 300 ml Ikea 404.728.99",
+                "notes": []
+            },
+            "imageForCreator": "./assets/images/placeholder.png",
+            "image": "./assets/images/blackberrysmash.png"
+        }
+    ]
+}

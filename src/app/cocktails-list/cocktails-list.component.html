@@ -1,0 +1,14 @@
+<div class="background-black">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon class="color-white">more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button *ngFor="let cocktail of cocktails" mat-menu-item (click)="scrollToCocktail(cocktail.title)">
+            <span>{{cocktail.title}}</span>
+        </button>
+    </mat-menu>
+</div>
+
+
+<app-cocktail-card *ngFor="let cocktail of cocktails" [cocktail]="cocktail" [attr.id]="cocktail.title"
+    [isMixologistMode]="isMixologistMode"></app-cocktail-card>
