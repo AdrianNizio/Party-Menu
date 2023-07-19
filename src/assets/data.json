@@ -4,23 +4,23 @@
             "title": "Whiskey Sour",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Whiskey"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Sok z cytryny"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Syrop cukrowy"
                 },
                 {
-                    "ammount": "1 'jajko'",
+                    "quantity": "1 'jajko'",
                     "name": "Aquafaba"
                 },
                 {
-                    "ammount": "Splash",
+                    "quantity": "Splash",
                     "name": "Bitter"
                 }
             ],
@@ -38,23 +38,23 @@
             "title": "Gin Fizz",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Gin"
                 },
                 {
-                    "ammount": "30 ml",
+                    "quantity": "30 ml",
                     "name": "Sok z cytryny"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Syrop cukrowy"
                 },
                 {
-                    "ammount": "1 jajko",
+                    "quantity": "1 jajko",
                     "name": "Aquafaba"
                 },
                 {
-                    "ammount": "Dobicie",
+                    "quantity": "Dobicie",
                     "name": "Woda gazowana"
                 }
             ],
@@ -70,19 +70,19 @@
             "title": "Pornstar Martini",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Rum/Wódka"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Triple Sec"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Sok z żurawiny"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Sok z limonki"
                 }
             ],
@@ -100,27 +100,27 @@
             "title": "Cosmopolitan",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Rum/Wódka"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Likier z Marakuji"
                 },
                 {
-                    "ammount": "30 ml",
+                    "quantity": "30 ml",
                     "name": "Puree z Marakuji"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Sok z limonki"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Syrop Waniliowy"
                 },
                 {
-                    "ammount": "Dobicie",
+                    "quantity": "Dobicie",
                     "name": "Woda gazowana"
                 }
             ],
@@ -138,27 +138,27 @@
             "title": "Rodos wersja bieda",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Gin"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Sok z cytryny"
                 },
                 {
-                    "ammount": "10 ml",
+                    "quantity": "10 ml",
                     "name": "Syrop z bzu"
                 },
                 {
-                    "ammount": "10 ml",
+                    "quantity": "10 ml",
                     "name": "Syrop cukrowy"
                 },
                 {
-                    "ammount": "4 liście",
+                    "quantity": "4 liście",
                     "name": "Bazylia"
                 },
                 {
-                    "ammount": "1",
+                    "quantity": "1",
                     "name": "Piana limonkowa"
                 }
             ],
@@ -178,35 +178,35 @@
             "title": "Miłość",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Rum"
                 },
                 {
-                    "ammount": "20 ml",
+                    "quantity": "20 ml",
                     "name": "Amaro Montenegro"
                 },
                 {
-                    "ammount": "Splash",
+                    "quantity": "Splash",
                     "name": "Bitter"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Sok z żurawiny"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Sok z cytryny"
                 },
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Syrop cukrowy"
                 },
                 {
-                    "ammount": "1 jajko",
+                    "quantity": "1 jajko",
                     "name": "Aquafaba"
                 },
                 {
-                    "ammount": "Dobicie",
+                    "quantity": "Dobicie",
                     "name": "Woda gazowana"
                 }
             ],
@@ -224,19 +224,19 @@
             "title": "Królowa Kier",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Rum"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Puree z Marakuji"
                 },
                 {
-                    "ammount": "10 ml",
+                    "quantity": "10 ml",
                     "name": "Syrop pomarańczowy"
                 },
                 {
-                    "ammount": "1",
+                    "quantity": "1",
                     "name": "Kardamon"
                 }
             ],
@@ -252,23 +252,23 @@
             "title": "Ostatni",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Wódka z trawą"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Syrop z brązowego cukru"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Sok z cytryny"
                 },
                 {
-                    "ammount": "5 ml",
+                    "quantity": "5 ml",
                     "name": "Palone masło"
                 },
                 {
-                    "ammount": "Splash",
+                    "quantity": "Splash",
                     "name": "Bitter"
                 }
             ],
@@ -287,27 +287,27 @@
             "title": "Milk-Shake",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Rum"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Sok z ananasa"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Syrop cynamonowy"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Śmietanka"
                 },
                 {
-                    "ammount": "Dobicie",
+                    "quantity": "Dobicie",
                     "name": "Bita śmietana"
                 },
                 {
-                    "ammount": "Splash",
+                    "quantity": "Splash",
                     "name": "Syrop wiśniowy"
                 }
             ],
@@ -325,35 +325,35 @@
             "title": "Kaskader",
             "ingredients": [
                 {
-                    "ammount": "30 ml",
+                    "quantity": "30 ml",
                     "name": "Rum/Wódka"
                 },
                 {
-                    "ammount": "30 ml",
+                    "quantity": "30 ml",
                     "name": "Tequila"
                 },
                 {
-                    "ammount": "30 ml",
+                    "quantity": "30 ml",
                     "name": "Gin"
                 },
                 {
-                    "ammount": "30 ml",
+                    "quantity": "30 ml",
                     "name": "Sok z grejpfruta"
                 },
                 {
-                    "ammount": "10",
+                    "quantity": "10",
                     "name": "Syrop cynamonowy"
                 },
                 {
-                    "ammount": "15",
+                    "quantity": "15",
                     "name": "Sok z żurawiny"
                 },
                 {
-                    "ammount": "90",
+                    "quantity": "90",
                     "name": "Cydr"
                 },
                 {
-                    "ammount": "Splash",
+                    "quantity": "Splash",
                     "name": "Bitter"
                 }
             ],
@@ -371,27 +371,27 @@
             "title": "Bermudy",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Rum"
                 },
                 {
-                    "ammount": "3/4 kiwi do shakera, 1/4 w plastrach do szklanki",
+                    "quantity": "3/4 kiwi do shakera, 1/4 w plastrach do szklanki",
                     "name": "Świeże kiwi"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Syrop z agawy"
                 },
                 {
-                    "ammount": "5 ml",
+                    "quantity": "5 ml",
                     "name": "Sok z cytryny"
                 },
                 {
-                    "ammount": "4-6",
+                    "quantity": "4-6",
                     "name": "Liście mięty"
                 },
                 {
-                    "ammount": "5 - 10 ml",
+                    "quantity": "5 - 10 ml",
                     "name": "Likier melonowy"
                 }
             ],
@@ -409,15 +409,15 @@
             "title": "Alicja",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Whiskey"
                 },
                 {
-                    "ammount": "100 - 150 ml",
+                    "quantity": "100 - 150 ml",
                     "name": "Herbata Blue Milk Oolong"
                 },
                 {
-                    "ammount": "25 ml",
+                    "quantity": "25 ml",
                     "name": "Sok z cytryny"
                 }
             ],
@@ -437,23 +437,23 @@
             "title": "Mai tai",
             "ingredients": [
                 {
-                    "ammount": "60 ml",
+                    "quantity": "60 ml",
                     "name": "Rum"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Triple Sec"
                 },
                 {
-                    "ammount": "30 ml",
+                    "quantity": "30 ml",
                     "name": "Sok z limonki"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Syrop migdałowy"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Czarny rum"
                 }
             ],
@@ -475,43 +475,43 @@
             "title": "Bali Bali",
             "ingredients": [
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Czarny rum"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Rum"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Whiskey z wanilią"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Gin"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Syrop migdałowy"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Likier z Marakuji"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Sok z ananasa"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Sok z pomarańczy"
                 },
                 {
-                    "ammount": "122 ml",
+                    "quantity": "122 ml",
                     "name": "Sok z limonki"
                 },
                 {
-                    "ammount": "8 ml",
+                    "quantity": "8 ml",
                     "name": "Syrop cukrowy"
                 }
             ],
@@ -529,23 +529,23 @@
             "title": "Winter Bro",
             "ingredients": [
                 {
-                    "ammount": "30 ml",
+                    "quantity": "30 ml",
                     "name": "Whiskey"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Ruby Port"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Sok z cytryny"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Syrop z brązowego cukru"
                 },
                 {
-                    "ammount": "1 jajko",
+                    "quantity": "1 jajko",
                     "name": "Aquafaba"
                 }
             ],
@@ -563,15 +563,15 @@
             "title": "Cosmonaut",
             "ingredients": [
                 {
-                    "ammount": "60 ml",
+                    "quantity": "60 ml",
                     "name": "Gin"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Sok z cytryny"
                 },
                 {
-                    "ammount": "1 łyżka barowa",
+                    "quantity": "1 łyżka barowa",
                     "name": "Konfitura malinowa"
                 }
             ],
@@ -587,23 +587,23 @@
             "title": "Blueberry Thyme Smash",
             "ingredients": [
                 {
-                    "ammount": "60 ml",
+                    "quantity": "60 ml",
                     "name": "Gin"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Syrop cukrowy"
                 },
                 {
-                    "ammount": "4 plastry",
+                    "quantity": "4 plastry",
                     "name": "Cytryna"
                 },
                 {
-                    "ammount": "10 - 15 sztuk",
+                    "quantity": "10 - 15 sztuk",
                     "name": "Borówka"
                 },
                 {
-                    "ammount": "4 - 6 gałązek",
+                    "quantity": "4 - 6 gałązek",
                     "name": "Tymianek"
                 }
             ],
@@ -622,23 +622,23 @@
             "title": "Strawberry Basil Smash",
             "ingredients": [
                 {
-                    "ammount": "60 ml",
+                    "quantity": "60 ml",
                     "name": "Rum"
                 },
                 {
-                    "ammount": "15 ml",
+                    "quantity": "15 ml",
                     "name": "Syrop z brązowego cukru"
                 },
                 {
-                    "ammount": "4 plastry",
+                    "quantity": "4 plastry",
                     "name": "Cytryna"
                 },
                 {
-                    "ammount": "2 sztuki",
+                    "quantity": "2 sztuki",
                     "name": "Truskawki"
                 },
                 {
-                    "ammount": "8 - 10 liści",
+                    "quantity": "8 - 10 liści",
                     "name": "Bazylia"
                 }
             ],
@@ -659,23 +659,23 @@
             "title": "Blackberry Smash",
             "ingredients": [
                 {
-                    "ammount": "60 ml",
+                    "quantity": "60 ml",
                     "name": "Whiskey"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Syrop z brązowego cukru"
                 },
                 {
-                    "ammount": "4 sztuki",
+                    "quantity": "4 sztuki",
                     "name": "Jeżyny"
                 },
                 {
-                    "ammount": "4 plastry",
+                    "quantity": "4 plastry",
                     "name": "Cytryna"
                 },
                 {
-                    "ammount": "6 - 8 liści",
+                    "quantity": "6 - 8 liści",
                     "name": "Mięta"
                 }
             ],
@@ -696,27 +696,27 @@
             "title": "Plum Island Punch",
             "ingredients": [
                 {
-                    "ammount": "50 ml",
+                    "quantity": "50 ml",
                     "name": "Lillet Rouge"
                 },
                 {
-                    "ammount": "30 ml",
+                    "quantity": "30 ml",
                     "name": "Złoty rum"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Syrop cukrowy"
                 },
                 {
-                    "ammount": "22 ml",
+                    "quantity": "22 ml",
                     "name": "Sok z limonki"
                 },
                 {
-                    "ammount": "Splash",
+                    "quantity": "Splash",
                     "name": "Absynt"
                 },
                 {
-                    "ammount": "Splash",
+                    "quantity": "Splash",
                     "name": "Syrop migdałowy"
                 }
             ],

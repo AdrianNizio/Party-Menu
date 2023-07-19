@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+    <ul>
+        <li *ngFor="let ingredient of cocktailsIngredients">
+            <mat-checkbox [checked]="ingredient.checked" (change)="saveCheckboxState(ingredient.name, $event)">
+                <span class="font-weight-light-custom">{{ingredient.name}}</span>
+                <span class="font-weight-bold-custom">({{ingredient.count}})</span>
+            </mat-checkbox>
+        </li>
+    </ul>
+
+</div>

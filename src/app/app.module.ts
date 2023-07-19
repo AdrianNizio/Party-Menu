@@ -18,6 +18,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { TableActionsComponent } from './components/table/table-actions/table-actions.component';
 import { TableFiltersComponent } from './components/table/table-filters/table-filters.component';
 import { TableWithItemsComponent } from './components/table/table-with-items/table-with-items.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -33,9 +34,10 @@ import { TableWithItemsComponent } from './components/table/table-with-items/tab
     SettingsComponent,
     MenuButtonsContainerComponent,
     FoodCardComponent,
-    FoodMenuComponent
+    FoodMenuComponent,
   ],
   imports: [
+    MatDialogModule,
     MatMenuModule,
     MatIconModule,
     BrowserModule,

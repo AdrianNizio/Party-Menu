@@ -1,4 +1,4 @@
-<div class="background-black">
+<div class="background-black d-flex justify-content-between">
     <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon class="color-white">more_vert</mat-icon>
     </button>
@@ -7,6 +7,9 @@
             <span>{{cocktail.title}}</span>
         </button>
     </mat-menu>
+    <button class="margin-right-2" mat-icon-button (click)="openShoppingList()">
+        <mat-icon class="color-white ">shopping_basket</mat-icon>
+    </button>
 </div>
 
 

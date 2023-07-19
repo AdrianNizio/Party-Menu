@@ -5,7 +5,7 @@
     <ul>
         <li *ngFor="let ingredient of cocktail.ingredients">
             <span class="font-weight-light-custom">{{ingredient.name}}</span>&nbsp;
-            <span *ngIf="isMixologistMode" class="font-weight-bold-custom">({{ingredient.ammount}})</span>
+            <span *ngIf="isMixologistMode" class="font-weight-bold-custom">({{ingredient.quantity}})</span>
         </li>
     </ul>
 

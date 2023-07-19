@@ -1,7 +1,7 @@
 export interface Cocktail {
     title: string;
     ingredients: [{
-        ammount: string;
+        quantity: string;
         name: string;
     }];
     image: string;
