@@ -28,8 +28,7 @@ export class MenuButtonsContainerComponent implements OnInit, OnDestroy {
     navigateToRoute(buttonData: Button) {
         this.router.navigate([buttonData.route]);
         if (buttonData.navigateData) {
-            // @ts-ignore
-            this.buttons = this.menuButtonsProviderService[buttonData.navigateData];
+            this.buttons = this.menuButtonsProviderService[buttonData.navigateData as keyof MenuButtonsProviderService] as Button[];
         }
     }
 }

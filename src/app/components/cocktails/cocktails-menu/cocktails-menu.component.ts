@@ -1,8 +1,11 @@
 import { Component, Inject, OnInit, inject } from '@angular/core';
 import { fader } from 'src/app/route-animations';
 import { BackendAccessService } from 'src/app/services/backend-access-service.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { Cocktail } from 'src/models/cocktail';
+import { NgFor } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
     animations: [fader],
@@ -45,7 +48,10 @@ interface cocktailsIngredientWithCount {
     count: unknown;
     checked?: boolean;
 }
+
+type cocktailsIngredientWithCountKeys = 'name' | 'count' | 'checked';
 @Component({
+    imports: [MatDialogModule, MatButtonModule, MatCheckboxModule, NgFor],
     selector: 'app-shopping-list-dialog',
     standalone: true,
     templateUrl: 'shopping-list-dialog.html',
@@ -54,7 +60,6 @@ export class ShoppingListDialog {
     cocktailsIngredients: cocktailsIngredientWithCount[] = [];
     constructor(public dialogRef: MatDialogRef<ShoppingListDialog>, @Inject(MAT_DIALOG_DATA) data: Cocktail[]) {
         if (sessionStorage.getItem('cocktailsIngredients')) {
-            // @ts-ignore
             this.cocktailsIngredients = JSON.parse(sessionStorage.getItem('cocktailsIngredients') || '');
         } else {
             const ingredientsWithCounts: cocktailsIngredientWithCount = {} as cocktailsIngredientWithCount;
@@ -62,8 +67,7 @@ export class ShoppingListDialog {
                 recipe.ingredients.forEach((ingredient) => {
                     const ingredientName = ingredient.name;
                     if (Object.values(ingredientsWithCounts).includes(ingredientName)) {
-                        // @ts-ignore
-                        ingredientsWithCounts[ingredientName]++;
+                        ingredientsWithCounts[ingredientName as cocktailsIngredientWithCountKeys]++;
                     } else {
                         // @ts-ignore
                         ingredientsWithCounts[ingredientName] = 1;
@@ -80,11 +84,10 @@ export class ShoppingListDialog {
         sessionStorage.setItem('cocktailsIngredients', JSON.stringify(this.cocktailsIngredients));
     }
 
-    saveCheckboxState(ingredientName: string, event: any) {
+    saveCheckboxState(ingredientName: string, event: MatCheckboxChange) {
         const foundObject = this.cocktailsIngredients.find((obj) => obj.name === ingredientName);
         if (foundObject) {
-            foundObject.checked = true;
-            console.log(event);
+            foundObject.checked = event.checked;
             sessionStorage.setItem('cocktailsIngredients', JSON.stringify(this.cocktailsIngredients));
         }
     }

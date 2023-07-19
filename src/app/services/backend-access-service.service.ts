@@ -3,6 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { Cocktail } from 'src/models/cocktail';
 
+interface responseType {
+    data: Cocktail[];
+}
+
 @Injectable({
     providedIn: 'root',
 })
@@ -10,6 +14,6 @@ export class BackendAccessService {
     constructor(private http: HttpClient) {}
 
     getCocktailsMenu(): Observable<Cocktail[]> {
-        return this.http.get('./assets/data.json').pipe(map((response: any) => response.data));
+        return this.http.get<responseType>('./assets/data.json').pipe(map((response: responseType) => response.data));
     }
 }
