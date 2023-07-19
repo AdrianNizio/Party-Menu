@@ -8,23 +8,60 @@ import { FoodMenuComponent } from './components/food/food-menu/food-menu.compone
 import { AppRoutes } from './enums/app-routes';
 
 const routes: Routes = [
-  { path: AppRoutes.Empty, component: WelcomeScreenComponent, data: { animation: 'isLeft' } },
-  { path: AppRoutes.CocktailsRoute, component: CocktailsMenuComponent, data: { animation: 'isRight' } },
-  { path: AppRoutes.FoodRoute, component: FoodMenuComponent, data: { animation: 'isRight' } },
-  { path: AppRoutes.TableRoute, component: TableWithItemsComponent, data: { animation: 'isRight' } },
-  { path: AppRoutes.NewItemRoute, component: AddNewRecipeFormComponent, data: { animation: 'isRight' } },
-  { path: AppRoutes.SettingsRoute, component: WelcomeScreenComponent, data: { animation: 'isRight' } },
-  { path: AppRoutes.MenusMenuRoute, component: WelcomeScreenComponent, data: { animation: 'isRight' } },
-  { path: AppRoutes.NewRecipeMenuRoute, component: WelcomeScreenComponent, data: { animation: 'isRight' } },
-  { path: AppRoutes.ViewMenusMenuRoute, component: WelcomeScreenComponent, data: { animation: 'isRight' } },
-  { path: AppRoutes.CreateNewMenusMenuRoute, component: WelcomeScreenComponent, data: { animation: 'isRight' } },
+    {
+        component: WelcomeScreenComponent,
+        data: { animation: 'isLeft' },
+        path: AppRoutes.Empty,
+    },
+    {
+        component: CocktailsMenuComponent,
+        data: { animation: 'isRight' },
+        path: AppRoutes.CocktailsRoute,
+    },
+    {
+        component: FoodMenuComponent,
+        data: { animation: 'isRight' },
+        path: AppRoutes.FoodRoute,
+    },
+    {
+        component: TableWithItemsComponent,
+        data: { animation: 'isRight' },
+        path: AppRoutes.TableRoute,
+    },
+    {
+        component: AddNewRecipeFormComponent,
+        data: { animation: 'isRight' },
+        path: AppRoutes.NewItemRoute,
+    },
+    {
+        component: WelcomeScreenComponent,
+        data: { animation: 'isRight' },
+        path: AppRoutes.SettingsRoute,
+    },
+    {
+        component: WelcomeScreenComponent,
+        data: { animation: 'isRight' },
+        path: AppRoutes.MenusMenuRoute,
+    },
+    {
+        component: WelcomeScreenComponent,
+        data: { animation: 'isRight' },
+        path: AppRoutes.NewRecipeMenuRoute,
+    },
+    {
+        component: WelcomeScreenComponent,
+        data: { animation: 'isRight' },
+        path: AppRoutes.ViewMenusMenuRoute,
+    },
+    {
+        component: WelcomeScreenComponent,
+        data: { animation: 'isRight' },
+        path: AppRoutes.CreateNewMenusMenuRoute,
+    },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    exports: [RouterModule],
+    imports: [RouterModule.forRoot(routes)],
 })
-export class AppRoutingModule { }
-
-
-
+export class AppRoutingModule {}

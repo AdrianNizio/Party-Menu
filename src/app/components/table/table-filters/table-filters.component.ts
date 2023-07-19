@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-table-filters',
-  templateUrl: './table-filters.component.html',
-  styleUrls: ['./table-filters.component.scss']
+    selector: 'app-table-filters',
+    styleUrls: ['./table-filters.component.scss'],
+    templateUrl: './table-filters.component.html',
 })
-export class TableFiltersComponent {
-
-}
+export class TableFiltersComponent {}

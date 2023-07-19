@@ -6,32 +6,30 @@ import { Button } from 'src/app/models/main-menu-buttons';
 import { MenuButtonsProviderService } from 'src/app/services/menu-buttons-provider.service';
 
 @Component({
-  selector: 'app-menu-buttons-container',
-  templateUrl: './menu-buttons-container.component.html',
-  styleUrls: ['./menu-buttons-container.component.scss']
+    selector: 'app-menu-buttons-container',
+    styleUrls: ['./menu-buttons-container.component.scss'],
+    templateUrl: './menu-buttons-container.component.html',
 })
-
 export class MenuButtonsContainerComponent implements OnInit, OnDestroy {
+    router = inject(Router);
+    location = inject(Location);
+    menuButtonsProviderService = inject(MenuButtonsProviderService);
+    subscription = new Subscription();
+    buttons: Button[] = [];
 
-  router = inject(Router);
-  location = inject(Location);
-  menuButtonsProviderService = inject(MenuButtonsProviderService);
-  subscription = new Subscription();
-  buttons: Button[] = [];
-
-  ngOnInit() {
-    this.buttons = this.menuButtonsProviderService.getButtonsByUrl(this.location.path().replace(/^\/+|\/+$/g, ''));
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
-  navigateToRoute(buttonData: Button) {
-    this.router.navigate([buttonData.route])
-    if (buttonData.navigateData) {
-      // @ts-ignore
-      this.buttons = this.menuButtonsProviderService[buttonData.navigateData];
+    ngOnInit() {
+        this.buttons = this.menuButtonsProviderService.getButtonsByUrl(this.location.path().replace(/^\/+|\/+$/g, ''));
     }
-  }
+
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
+
+    navigateToRoute(buttonData: Button) {
+        this.router.navigate([buttonData.route]);
+        if (buttonData.navigateData) {
+            // @ts-ignore
+            this.buttons = this.menuButtonsProviderService[buttonData.navigateData];
+        }
+    }
 }

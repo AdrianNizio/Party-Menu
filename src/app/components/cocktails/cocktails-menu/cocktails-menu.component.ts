@@ -1,91 +1,91 @@
 import { Component, Inject, OnInit, inject } from '@angular/core';
 import { fader } from 'src/app/route-animations';
 import { BackendAccessService } from 'src/app/services/backend-access-service.service';
-import { MatDialog, MatDialogRef, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Cocktail } from 'src/models/cocktail';
-import { MatButtonModule } from '@angular/material/button';
-import { NgFor } from '@angular/common';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
-  animations: [fader],
-  selector: 'app-cocktails-menu',
-  templateUrl: './cocktails-menu.component.html',
-  styleUrls: ['./cocktails-menu.component.scss']
+    animations: [fader],
+    selector: 'app-cocktails-menu',
+    styleUrls: ['./cocktails-menu.component.scss'],
+    templateUrl: './cocktails-menu.component.html',
 })
 export class CocktailsMenuComponent implements OnInit {
-  dialog = inject(MatDialog);
-  private backendAccessService = inject(BackendAccessService);
-  cocktails: Cocktail[] = [];
-  isMixologistMode: boolean = false;
+    dialog = inject(MatDialog);
+    private backendAccessService = inject(BackendAccessService);
+    cocktails: Cocktail[] = [];
+    isMixologistMode: boolean = false;
 
-  ngOnInit() {
-    this.backendAccessService.getCocktailsMenu().subscribe((cocktails) => {
-      this.cocktails = cocktails;
-    });
-    this.isMixologistMode = true;
-  }
-
-  scrollToCocktail(cocktailTitle: string) {
-    const cocktailCard = document.getElementById(cocktailTitle);
-
-    if (cocktailCard) {
-      cocktailCard.scrollIntoView({ behavior: 'smooth' });
+    ngOnInit() {
+        this.backendAccessService.getCocktailsMenu().subscribe((cocktails) => {
+            this.cocktails = cocktails;
+        });
+        this.isMixologistMode = true;
     }
-  }
 
-  openShoppingList(): void {
-    this.dialog.open(ShoppingListDialog, {
-      width: '400px',
-      data: this.cocktails
-    });
-  }
+    scrollToCocktail(cocktailTitle: string) {
+        const cocktailCard = document.getElementById(cocktailTitle);
+
+        if (cocktailCard) {
+            cocktailCard.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    openShoppingList(): void {
+        // eslint-disable-next-line no-use-before-define
+        this.dialog.open(ShoppingListDialog, {
+            data: this.cocktails,
+            width: '400px',
+        });
+    }
 }
 
-
-
-interface cocktailsIngredientWithCount { name: string; count: unknown; checked?: boolean }
+interface cocktailsIngredientWithCount {
+    name: string;
+    count: unknown;
+    checked?: boolean;
+}
 @Component({
-  selector: 'shopping-list-dialog',
-  templateUrl: 'shopping-list-dialog.html',
-  standalone: true,
-  imports: [MatDialogModule, MatButtonModule, MatCheckboxModule, NgFor],
+    selector: 'app-shopping-list-dialog',
+    standalone: true,
+    templateUrl: 'shopping-list-dialog.html',
 })
 export class ShoppingListDialog {
-  cocktailsIngredients: cocktailsIngredientWithCount[] = [];
-  constructor(public dialogRef: MatDialogRef<ShoppingListDialog>, @Inject(MAT_DIALOG_DATA) data: Cocktail[]) {
-    if (sessionStorage.getItem("cocktailsIngredients")) {
-      // @ts-ignore
-      this.cocktailsIngredients = JSON.parse(sessionStorage.getItem("cocktailsIngredients"));
-    } else {
-      const ingredientsWithCounts = {};
-      data.forEach(recipe => {
-        recipe.ingredients.forEach(ingredient => {
-          const ingredientName = ingredient.name;
-          if (ingredientsWithCounts.hasOwnProperty(ingredientName)) {
+    cocktailsIngredients: cocktailsIngredientWithCount[] = [];
+    constructor(public dialogRef: MatDialogRef<ShoppingListDialog>, @Inject(MAT_DIALOG_DATA) data: Cocktail[]) {
+        if (sessionStorage.getItem('cocktailsIngredients')) {
             // @ts-ignore
-            ingredientsWithCounts[ingredientName]++;
-          } else {
-            // @ts-ignore
-            ingredientsWithCounts[ingredientName] = 1;
-          }
-        });
-      });
+            this.cocktailsIngredients = JSON.parse(sessionStorage.getItem('cocktailsIngredients') || '');
+        } else {
+            const ingredientsWithCounts: cocktailsIngredientWithCount = {} as cocktailsIngredientWithCount;
+            data.forEach((recipe) => {
+                recipe.ingredients.forEach((ingredient) => {
+                    const ingredientName = ingredient.name;
+                    if (Object.values(ingredientsWithCounts).includes(ingredientName)) {
+                        // @ts-ignore
+                        ingredientsWithCounts[ingredientName]++;
+                    } else {
+                        // @ts-ignore
+                        ingredientsWithCounts[ingredientName] = 1;
+                    }
+                });
+            });
 
-      const ingredientCountArray = Object.entries(ingredientsWithCounts).map(([name, count]) => ({
-        name,
-        count
-      }));
-      this.cocktailsIngredients = ingredientCountArray;
+            const ingredientCountArray = Object.entries(ingredientsWithCounts).map(([count, name]) => ({
+                count,
+                name,
+            }));
+            this.cocktailsIngredients = ingredientCountArray;
+        }
+        sessionStorage.setItem('cocktailsIngredients', JSON.stringify(this.cocktailsIngredients));
     }
-    sessionStorage.setItem("cocktailsIngredients", JSON.stringify(this.cocktailsIngredients));
-  }
 
-  saveCheckboxState(ingredientName: string, event: any) {
-    const foundObject = this.cocktailsIngredients.find(obj => obj.name === ingredientName);
-    if (foundObject) {
-      foundObject.checked = true;
-      sessionStorage.setItem("cocktailsIngredients", JSON.stringify(this.cocktailsIngredients));
+    saveCheckboxState(ingredientName: string, event: any) {
+        const foundObject = this.cocktailsIngredients.find((obj) => obj.name === ingredientName);
+        if (foundObject) {
+            foundObject.checked = true;
+            console.log(event);
+            sessionStorage.setItem('cocktailsIngredients', JSON.stringify(this.cocktailsIngredients));
+        }
     }
-  }
 }

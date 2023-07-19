@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-table-with-items',
-  templateUrl: './table-with-items.component.html',
-  styleUrls: ['./table-with-items.component.scss']
+    selector: 'app-table-with-items',
+    styleUrls: ['./table-with-items.component.scss'],
+    templateUrl: './table-with-items.component.html',
 })
-export class TableWithItemsComponent {
-
-}
+export class TableWithItemsComponent {}

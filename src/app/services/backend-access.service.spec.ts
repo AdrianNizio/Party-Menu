@@ -1,16 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { BackendAccessService } from './backend-access-service.service';
 
-
 describe('BackendAccessService', () => {
-  let service: BackendAccessService;
+    let service: BackendAccessService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(BackendAccessService);
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({});
+        service = TestBed.inject(BackendAccessService);
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it('should be created', () => {
+        expect(service).toBeTruthy();
+    });
 });

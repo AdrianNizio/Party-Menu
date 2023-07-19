@@ -3,19 +3,19 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TableFiltersComponent } from './table-filters.component';
 
 describe('TableFiltersComponent', () => {
-  let component: TableFiltersComponent;
-  let fixture: ComponentFixture<TableFiltersComponent>;
+    let component: TableFiltersComponent;
+    let fixture: ComponentFixture<TableFiltersComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [TableFiltersComponent]
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [TableFiltersComponent],
+        });
+        fixture = TestBed.createComponent(TableFiltersComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
     });
-    fixture = TestBed.createComponent(TableFiltersComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });
