@@ -6,6 +6,8 @@ import { Cocktail } from 'src/models/cocktail';
 import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
+import { ActivatedRoute } from '@angular/router';
+import { AppRoutes } from 'src/app/enums/app-routes';
 
 @Component({
     animations: [fader],
@@ -15,6 +17,8 @@ import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox
 })
 export class CocktailsMenuComponent implements OnInit {
     dialog = inject(MatDialog);
+    route = inject(ActivatedRoute);
+
     private backendAccessService = inject(BackendAccessService);
     cocktails: Cocktail[] = [];
     isMixologistMode: boolean = false;
@@ -23,7 +27,12 @@ export class CocktailsMenuComponent implements OnInit {
         this.backendAccessService.getCocktailsMenu().subscribe((cocktails) => {
             this.cocktails = cocktails;
         });
-        this.isMixologistMode = true;
+        this.route.url.subscribe((segments) => {
+            const url = segments.join('/');
+            if (url === AppRoutes.Mixologist) {
+                this.isMixologistMode = true;
+            }
+        });
     }
 
     scrollToCocktail(cocktailTitle: string) {

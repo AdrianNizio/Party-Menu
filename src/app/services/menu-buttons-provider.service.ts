@@ -113,7 +113,7 @@ export class MenuButtonsProviderService {
     };
 
     getButtonsByUrl(url: string) {
-        if (url) {
+        if (url && this.buttonsByUrlLookupTable[url]) {
             return this.buttonsByUrlLookupTable[url];
         } else {
             return this.welcomeScreenButtons;

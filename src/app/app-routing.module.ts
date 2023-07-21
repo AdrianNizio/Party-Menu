@@ -9,6 +9,11 @@ import { AppRoutes } from './enums/app-routes';
 
 const routes: Routes = [
     {
+        component: CocktailsMenuComponent,
+        data: { animation: 'isLeft' },
+        path: AppRoutes.Mixologist,
+    },
+    {
         component: WelcomeScreenComponent,
         data: { animation: 'isLeft' },
         path: AppRoutes.Empty,
@@ -57,6 +62,11 @@ const routes: Routes = [
         component: WelcomeScreenComponent,
         data: { animation: 'isRight' },
         path: AppRoutes.CreateNewMenusMenuRoute,
+    },
+    {
+        component: WelcomeScreenComponent,
+        data: { animation: 'isLeft' },
+        path: AppRoutes.WildCard,
     },
 ];
 
