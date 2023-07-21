@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
     templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-    title = 'Party Menu';
+    title = 'cocktails';
 
     constructor(translate: TranslateService, private contexts: ChildrenOutletContexts) {
         // this language will be used as a fallback when a translation isn't found in the current language

@@ -19,7 +19,6 @@ import { TableWithItemsComponent } from './components/table/table-with-items/tab
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MaterialModule } from './external-modules/material/material.module';
-import { IonicModule } from '@ionic/angular';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -55,7 +54,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         AppRoutingModule,
         HttpClientModule,
         MaterialModule,
-        IonicModule.forRoot(),
     ],
     providers: [],
 })
