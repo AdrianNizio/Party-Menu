@@ -10,5 +10,28 @@
         "Food": "Food",
         "All": "All",
         "CombinedMenus": "Combined"
+    },
+    "RecipeCreation": {
+        "AddNewIngredient": "Add new ingredient",
+        "RecipeIngredient": "Ingredient",
+        "RecipeMeasurementUnit": "Measurement Unit",
+        "RecipeHowMuchOfIngredient": "How much",
+        "RecipeTitle": "Dish/Cocktail name:",
+        "RecipeProcess": "Describe process:",
+        "RecipeListOfIngredients": "Ingredients:",
+        "RecipePictureForGuests": "Picture displayed to guests",
+        "RecipePictureForCreator": "Picture displayed to chef/mixologist",
+        "RecipeGarnish": "Garnish:",
+        "RecipeNotes": "Notes:",
+        "RecipeGlassPlate": "Glass/Plate suggestion:"
+    },
+    "MeasurementUnits": {
+        "Teaspoon": "Teaspoon",
+        "Tablespoon": "Tablespoon",
+        "Egg": "Egg",
+        "Milliliter": "ml",
+        "Liter": "l",
+        "Dash": "Dash",
+        "Splash": "Splash"
     }
 }

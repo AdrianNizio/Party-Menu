@@ -19,6 +19,8 @@ import { TableWithItemsComponent } from './components/table/table-with-items/tab
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MaterialModule } from './external-modules/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FileUploadComponentComponent } from './components/new-recipe/file-upload-component/file-upload-component.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -39,6 +41,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MenuButtonsContainerComponent,
         FoodCardComponent,
         FoodMenuComponent,
+        FileUploadComponentComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -54,6 +57,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         AppRoutingModule,
         HttpClientModule,
         MaterialModule,
+        ReactiveFormsModule,
     ],
     providers: [],
 })
