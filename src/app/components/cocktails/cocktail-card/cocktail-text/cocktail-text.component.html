@@ -1,7 +1,4 @@
 <div class="mx-auto">
-    <h2 class="font-weight-bold-custom">
-        {{cocktail.title}}
-    </h2>
     <ul>
         <li *ngFor="let ingredient of cocktail.ingredients">
             <span class="font-weight-light-custom">{{ingredient.name}}</span>&nbsp;
@@ -11,29 +8,19 @@
 
     <div *ngIf="isMixologistMode">
         <div *ngIf="cocktail.creator.garnish.length > 0">
-            <h5 class="font-weight-bold-custom">
-                Garnish
-            </h5>
+            <h5 class="font-weight-bold-custom">Garnish</h5>
             <ul>
-                <li *ngFor="let garnish of cocktail.creator.garnish">
-                    <span class="font-weight-light-custom">{{garnish}}</span>&nbsp;
-                </li>
+                <li *ngFor="let garnish of cocktail.creator.garnish"><span class="font-weight-light-custom">{{garnish}}</span>&nbsp;</li>
             </ul>
         </div>
         <div *ngIf="cocktail.creator.notes.length > 0">
-            <h5 class="font-weight-bold-custom">
-                Notes
-            </h5>
+            <h5 class="font-weight-bold-custom">Notes</h5>
             <ul>
-                <li *ngFor="let note of cocktail.creator.notes">
-                    <span class="font-weight-light-custom">{{note}}</span>&nbsp;
-                </li>
+                <li *ngFor="let note of cocktail.creator.notes"><span class="font-weight-light-custom">{{note}}</span>&nbsp;</li>
             </ul>
         </div>
         <div *ngIf="cocktail.creator.glass.length > 0">
-            <h5 class="font-weight-bold-custom">
-                Glass
-            </h5>
+            <h5 class="font-weight-bold-custom">Glass</h5>
             <p class="padding-left-2rem">{{cocktail.creator.glass}}</p>
         </div>
     </div>

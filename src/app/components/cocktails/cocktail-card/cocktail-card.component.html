@@ -1,7 +1,14 @@
-<div class="row mb-1 background-texture p-5">
-    <app-cocktail-text class="h-100 col-sm" [cocktail]="cocktail"
-        [isMixologistMode]="isMixologistMode"></app-cocktail-text>
-    <div class="col-sm cocktail-image-wrapper">
-        <img class="mx-auto" src={{cocktail.image}} />
-    </div>
-</div>
+<mat-card class="mb-1 example-card background-texture">
+    <mat-card-header>
+        <mat-card-title> {{cocktail.title}}</mat-card-title>
+        <!-- <mat-card-subtitle>Here goes taste description</mat-card-subtitle> -->
+    </mat-card-header>
+    <img mat-card-image src="{{cocktail.image}}" alt="cocktail photo" />
+    <mat-card-content>
+        <app-cocktail-text [cocktail]="cocktail" [isMixologistMode]="isMixologistMode"></app-cocktail-text>
+    </mat-card-content>
+    <!-- <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions> -->
+</mat-card>

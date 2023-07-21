@@ -11,6 +11,11 @@ img {
     max-height: 100%;
 }
 
+mat-card,
+mat-card-subtitle {
+    color: white;
+}
+
 .background-texture {
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(30, 30, 32, 1) 52%, rgba(49, 87, 94, 1) 100%);
 }

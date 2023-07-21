@@ -21,6 +21,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MaterialModule } from './external-modules/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FileUploadComponentComponent } from './components/new-recipe/file-upload-component/file-upload-component.component';
+import { SideNavContainerComponent } from './components/side-nav-container/side-nav-container.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -42,6 +43,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         FoodCardComponent,
         FoodMenuComponent,
         FileUploadComponentComponent,
+        SideNavContainerComponent,
     ],
     imports: [
         TranslateModule.forRoot({
