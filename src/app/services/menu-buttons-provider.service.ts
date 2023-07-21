@@ -14,25 +14,25 @@ export class MenuButtonsProviderService {
             classes: this.buttonClasses,
             navigateData: 'dishMenuButtons',
             route: AppRoutes.MenusMenuRoute,
-            text: 'Menus',
+            text: 'MenuButtons.Menus',
         },
         {
             classes: this.buttonClasses,
             route: AppRoutes.TableRoute,
             tableFilters: '',
-            text: 'List of all recipes',
+            text: 'MenuButtons.ListOfAllRecipes',
         },
         {
             classes: this.buttonClasses,
             navigateData: 'newRecipeButtons',
             route: AppRoutes.NewRecipeMenuRoute,
-            text: 'Add new recipe',
+            text: 'MenuButtons.AddNewRecipe',
         },
         {
             classes: 'btn btn-secondary',
             navigateData: 'settingsButtons',
             route: AppRoutes.SettingsRoute,
-            text: 'Settings',
+            text: 'MenuButtons.Settings',
         },
     ];
 
@@ -41,13 +41,13 @@ export class MenuButtonsProviderService {
             classes: this.buttonClasses,
             navigateData: 'dishMenuButtons2',
             route: AppRoutes.ViewMenusMenuRoute,
-            text: 'View menus',
+            text: 'MenuButtons.ViewMenus',
         },
         {
             classes: this.buttonClasses,
             navigateData: 'dishMenuButtons2',
             route: AppRoutes.CreateNewMenusMenuRoute,
-            text: 'Create new menu',
+            text: 'MenuButtons.CreateNewMenu',
         },
     ];
 
@@ -56,25 +56,25 @@ export class MenuButtonsProviderService {
             classes: this.buttonClasses,
             route: AppRoutes.TableRoute,
             tableFilters: '',
-            text: 'Alcohol',
+            text: 'MenuButtons.Alcohol',
         },
         {
             classes: this.buttonClasses,
             route: AppRoutes.TableRoute,
             tableFilters: '',
-            text: 'Food',
+            text: 'MenuButtons.Food',
         },
         {
             classes: this.buttonClasses,
             route: AppRoutes.TableRoute,
             tableFilters: '',
-            text: 'All',
+            text: 'MenuButtons.All',
         },
         {
             classes: this.buttonClasses,
             route: AppRoutes.TableRoute,
             tableFilters: '',
-            text: 'Combined',
+            text: 'MenuButtons.CombinedMenus',
         },
     ];
 
@@ -82,12 +82,12 @@ export class MenuButtonsProviderService {
         {
             classes: this.buttonClasses,
             route: AppRoutes.NewItemRoute,
-            text: 'Alcohol',
+            text: 'MenuButtons.Alcohol',
         },
         {
             classes: this.buttonClasses,
             route: AppRoutes.NewItemRoute,
-            text: 'Food',
+            text: 'MenuButtons.Food',
         },
     ];
 
@@ -95,12 +95,12 @@ export class MenuButtonsProviderService {
         {
             classes: this.buttonClasses,
             route: AppRoutes.NewItemRoute,
-            text: 'Alcohol',
+            text: 'MenuButtons.Alcohol',
         },
         {
             classes: this.buttonClasses,
             route: AppRoutes.NewItemRoute,
-            text: 'Food',
+            text: 'MenuButtons.Food',
         },
     ];
 

@@ -1,0 +1,14 @@
+{
+    "MenuButtons": {
+        "Menus": "Menus",
+        "ListOfAllRecipes": "List of all recipes",
+        "AddNewRecipe": "Add new recipe",
+        "Settings": "Settings",
+        "ViewMenus": "View menus",
+        "CreateNewMenu": "Create new menu",
+        "Alcohol": "Alcohol",
+        "Food": "Food",
+        "All": "All",
+        "CombinedMenus": "Combined"
+    }
+}
