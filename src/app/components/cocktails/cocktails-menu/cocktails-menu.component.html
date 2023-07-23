@@ -1,5 +1,5 @@
-<div class="background-black d-flex justify-content-between">
-    <button mat-icon-button [matMenuTriggerFor]="menu">
+<mat-toolbar class="background-black d-flex justify-content-between"
+    ><button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon class="color-white">more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
@@ -7,11 +7,14 @@
             <span>{{cocktail.title}}</span>
         </button>
     </mat-menu>
-    <button class="margin-right-2" mat-icon-button (click)="openShoppingList()">
-        <mat-icon class="color-white ">shopping_basket</mat-icon>
+    <button class="margin-right-2" *ngIf="isMixologistMode" mat-icon-button (click)="openShoppingList()">
+        <mat-icon class="color-white">shopping_basket</mat-icon>
     </button>
-</div>
+</mat-toolbar>
 
-
-<app-cocktail-card *ngFor="let cocktail of cocktails" [cocktail]="cocktail" [attr.id]="cocktail.title"
-    [isMixologistMode]="isMixologistMode"></app-cocktail-card>
+<app-cocktail-card
+    *ngFor="let cocktail of cocktails"
+    [cocktail]="cocktail"
+    [attr.id]="cocktail.title"
+    [isMixologistMode]="isMixologistMode"
+></app-cocktail-card>

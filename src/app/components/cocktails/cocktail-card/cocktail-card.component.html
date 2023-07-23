@@ -1,9 +1,11 @@
-<mat-card class="mb-1 example-card background-texture">
+<mat-card class="mat-elevation-z8 px-2 my-3 mx-3 background-texture">
     <mat-card-header>
         <mat-card-title> {{cocktail.title}}</mat-card-title>
-        <!-- <mat-card-subtitle>Here goes taste description</mat-card-subtitle> -->
+        <!-- <mat-card-subtitle>Placeholder</mat-card-subtitle> -->
     </mat-card-header>
-    <img mat-card-image src="{{cocktail.image}}" alt="cocktail photo" />
+    <div class="col-sm cocktail-image-wrapper">
+        <img mat-card-image src="{{cocktail.image}}" alt="Photo of a Shiba Inu" />
+    </div>
     <mat-card-content>
         <app-cocktail-text [cocktail]="cocktail" [isMixologistMode]="isMixologistMode"></app-cocktail-text>
     </mat-card-content>

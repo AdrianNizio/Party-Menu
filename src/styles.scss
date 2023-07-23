@@ -1,5 +1,15 @@
 body {
     overflow-x: hidden;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.vh-100-56 {
+    height: calc(100vh - 56px);
+}
