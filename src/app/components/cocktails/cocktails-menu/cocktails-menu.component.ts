@@ -65,32 +65,42 @@ type cocktailsIngredientWithCountKeys = 'name' | 'count' | 'checked';
     standalone: true,
     templateUrl: 'shopping-list-dialog.html',
 })
-export class ShoppingListDialog {
+export class ShoppingListDialog implements OnInit {
     cocktailsIngredients: cocktailsIngredientWithCount[] = [];
-    constructor(public dialogRef: MatDialogRef<ShoppingListDialog>, @Inject(MAT_DIALOG_DATA) data: Cocktail[]) {
+    constructor(public dialogRef: MatDialogRef<ShoppingListDialog>, @Inject(MAT_DIALOG_DATA) public data: Cocktail[]) {}
+
+    ngOnInit() {
         if (sessionStorage.getItem('cocktailsIngredients')) {
             this.cocktailsIngredients = JSON.parse(sessionStorage.getItem('cocktailsIngredients') || '');
         } else {
-            const ingredientsWithCounts: cocktailsIngredientWithCount = {} as cocktailsIngredientWithCount;
-            data.forEach((recipe) => {
-                recipe.ingredients.forEach((ingredient) => {
-                    const ingredientName = ingredient.name;
-                    if (Object.values(ingredientsWithCounts).includes(ingredientName)) {
-                        ingredientsWithCounts[ingredientName as cocktailsIngredientWithCountKeys]++;
-                    } else {
-                        // @ts-ignore
-                        ingredientsWithCounts[ingredientName] = 1;
-                    }
-                });
-            });
-
-            const ingredientCountArray = Object.entries(ingredientsWithCounts).map(([count, name]) => ({
-                count,
-                name,
-            }));
-            this.cocktailsIngredients = ingredientCountArray;
+            let ingredientsWithCounts: cocktailsIngredientWithCount = {} as cocktailsIngredientWithCount;
+            this.countIngredientRepetitions(ingredientsWithCounts);
+            this.createArrayOfObjectsFromIngredientCounts(ingredientsWithCounts);
+            sessionStorage.setItem('cocktailsIngredients', JSON.stringify(this.cocktailsIngredients));
         }
-        sessionStorage.setItem('cocktailsIngredients', JSON.stringify(this.cocktailsIngredients));
+    }
+
+    countIngredientRepetitions(ingredientsWithCounts: cocktailsIngredientWithCount): cocktailsIngredientWithCount {
+        this.data.forEach((recipe) => {
+            recipe.ingredients.forEach((ingredient) => {
+                const ingredientName = ingredient.name;
+                if (Object.keys(ingredientsWithCounts).includes(ingredientName)) {
+                    ingredientsWithCounts[ingredientName as cocktailsIngredientWithCountKeys]++;
+                } else {
+                    // @ts-ignore
+                    ingredientsWithCounts[ingredientName] = 1;
+                }
+            });
+        });
+        return ingredientsWithCounts;
+    }
+
+    createArrayOfObjectsFromIngredientCounts(ingredientsWithCounts: cocktailsIngredientWithCount) {
+        const ingredientCountArray = Object.entries(ingredientsWithCounts).map(([count, name]) => ({
+            count,
+            name,
+        }));
+        this.cocktailsIngredients = ingredientCountArray;
     }
 
     saveCheckboxState(ingredientName: string, event: MatCheckboxChange) {
