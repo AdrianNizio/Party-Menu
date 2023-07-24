@@ -7,7 +7,7 @@ import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
 import { ActivatedRoute } from '@angular/router';
-import { AppRoutes } from 'src/app/enums/app-routes';
+import { AppRoutes } from 'src/app/constants/enums/app-routes';
 
 @Component({
     animations: [fader],

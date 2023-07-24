@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Button } from 'src/app/models/main-menu-buttons';
+import { Button } from 'src/app/constants/models/main-menu-buttons';
 import { MenuButtonsProviderService } from 'src/app/services/menu-buttons-provider.service';
 
 @Component({

@@ -3,9 +3,7 @@
         <mat-card-title> {{cocktail.title}}</mat-card-title>
         <!-- <mat-card-subtitle>Placeholder</mat-card-subtitle> -->
     </mat-card-header>
-    <div class="col-sm cocktail-image-wrapper">
-        <img mat-card-image src="{{cocktail.image}}" alt="Photo of a Shiba Inu" />
-    </div>
+    <img mat-card-image src="{{cocktail.image}}" alt="Cocktail photo" />
     <mat-card-content>
         <app-cocktail-text [cocktail]="cocktail" [isMixologistMode]="isMixologistMode"></app-cocktail-text>
     </mat-card-content>
