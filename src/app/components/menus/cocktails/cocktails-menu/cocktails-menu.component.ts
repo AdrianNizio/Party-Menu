@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, inject } from '@angular/core';
 import { fader } from 'src/app/route-animations';
 import { BackendAccessService } from 'src/app/services/backend-access-service.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
-import { Cocktail } from 'src/models/cocktail';
+import { Cocktail } from 'src/app/constants/models/cocktail';
 import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';

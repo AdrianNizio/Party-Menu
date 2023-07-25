@@ -24,6 +24,8 @@ import { FileUploadComponentComponent } from './components/new-recipe/file-uploa
 import { SideNavContainerComponent } from './components/navigation/side-nav-container/side-nav-container.component';
 import { StoreModule } from '@ngrx/store';
 import { PartyMenuNavbarComponent } from './components/navigation/party-menu-navbar/party-menu-navbar.component';
+import { TranslateDifficultyPipe } from 'src/pipes/difficulty-pipe/difficulty-pipe.pipe';
+import { secondsToMinutes } from 'src/pipes/seconds-to-minutes-pipe/seconds-to-minutes-pipe.pipe';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -47,6 +49,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         FileUploadComponentComponent,
         SideNavContainerComponent,
         PartyMenuNavbarComponent,
+        TranslateDifficultyPipe,
+        secondsToMinutes,
     ],
     imports: [
         TranslateModule.forRoot({

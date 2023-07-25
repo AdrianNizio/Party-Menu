@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { Cocktail } from 'src/models/cocktail';
+import { Cocktail } from 'src/app/constants/models/cocktail';
 
 interface responseType {
     data: Cocktail[];

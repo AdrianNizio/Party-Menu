@@ -24,7 +24,10 @@
                     "name": "Bitter"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Bitter"
                 ],
@@ -58,7 +61,10 @@
                     "name": "Woda gazowana"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [],
                 "glass": "Collins Szklanka 310 ml Ikea 102.704.78",
                 "notes": []
@@ -86,7 +92,10 @@
                     "name": "Sok z limonki"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Plaster limonki"
                 ],
@@ -124,7 +133,10 @@
                     "name": "Woda gazowana"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Plaster limonki"
                 ],
@@ -162,7 +174,10 @@
                     "name": "Piana limonkowa"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Liść bazylii"
                 ],
@@ -210,7 +225,10 @@
                     "name": "Woda gazowana"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Gałązka czegoś sztywnego zielonego"
                 ],
@@ -240,7 +258,10 @@
                     "name": "Kardamon"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [],
                 "glass": "Margarita",
                 "notes": []
@@ -272,7 +293,10 @@
                     "name": "Bitter"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Sezamek",
                     "Starta skórka pomarańczy na sezamku"
@@ -311,7 +335,10 @@
                     "name": "Syrop wiśniowy"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Wisienka"
                 ],
@@ -357,7 +384,10 @@
                     "name": "Bitter"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Suszone pomarańcze w kostce"
                 ],
@@ -395,7 +425,10 @@
                     "name": "Likier melonowy"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Suszone kiwi"
                 ],
@@ -421,7 +454,10 @@
                     "name": "Sok z cytryny"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Herbatnik"
                 ],
@@ -457,7 +493,10 @@
                     "name": "Czarny rum"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Liść mięty",
                     "Plaster limonki",
@@ -515,7 +554,10 @@
                     "name": "Syrop cukrowy"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Liście ananasa"
                 ],
@@ -549,7 +591,10 @@
                     "name": "Aquafaba"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Starta gałka muszkatołowa"
                 ],
@@ -575,7 +620,10 @@
                     "name": "Konfitura malinowa"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [],
                 "glass": "Kieliszek do wina ok 300 ml Ikea 404.728.99",
                 "notes": []
@@ -607,7 +655,10 @@
                     "name": "Tymianek"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Borówki",
                     "Tymianek"
@@ -642,7 +693,10 @@
                     "name": "Bazylia"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Truskawka",
                     "Bazylia"
@@ -679,7 +733,10 @@
                     "name": "Mięta"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Jeżyna",
                     "Mięta"
@@ -720,7 +777,10 @@
                     "name": "Syrop migdałowy"
                 }
             ],
-            "creator": {
+            "preparationTimeInSeconds": "120",
+            "difficulty": "2",
+            "type": "Alcohol",
+            "creatoRelevantInfo": {
                 "garnish": [
                     "Starta gałka muszkatołowa, liście ananasa"
                 ],

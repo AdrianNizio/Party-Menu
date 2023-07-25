@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Button } from '../constants/models/main-menu-buttons';
-import { ButtonsByUrlLookupTable } from 'src/models/lookup-table';
 import { AppRoutes } from '../constants/enums/app-routes';
+import { ButtonsByUrlLookupTable } from '../constants/models/lookup-table';
 
 @Injectable({
     providedIn: 'root',

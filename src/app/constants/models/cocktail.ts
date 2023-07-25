@@ -1,3 +1,4 @@
+const typeProperties = ['Alcohol', 'Food'] as const;
 export interface Cocktail {
     title: string;
     ingredients: [
@@ -8,9 +9,12 @@ export interface Cocktail {
     ];
     image: string;
     imageForCreator: string;
-    creator: {
+    creatoRelevantInfo: {
         garnish: string[];
         glass: string;
         notes: string[];
     };
+    preparationTimeInSeconds: number;
+    difficulty: number;
+    type: typeof typeProperties;
 }

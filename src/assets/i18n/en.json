@@ -33,5 +33,14 @@
         "Liter": "l",
         "Dash": "Dash",
         "Splash": "Splash"
+    },
+    "Difficulties":{
+        "Easy": "Easy",
+        "Medium": "Medium",
+        "Hard": "Hard",
+        "Exprert": "Exprert"
+    },
+    "Time":{
+        "MinutesWithValue": "{{minutesValue}} minutes"
     }
 }
