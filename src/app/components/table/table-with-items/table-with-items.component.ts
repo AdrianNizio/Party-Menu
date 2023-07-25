@@ -3,6 +3,7 @@ import { inject } from '@angular/core';
 import { Component } from '@angular/core';
 import { BackendAccessService } from 'src/app/services/backend-access-service.service';
 import { Cocktail } from 'src/app/constants/models/cocktail';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
     selector: 'app-table-with-items',
@@ -11,13 +12,31 @@ import { Cocktail } from 'src/app/constants/models/cocktail';
 })
 export class TableWithItemsComponent implements OnInit {
     cocktails: Cocktail[] = [];
+    selection = new SelectionModel<Cocktail>(true, []);
 
-    displayedColumns: string[] = ['name', 'preparationTime', 'difficulty', 'ingredients', 'type'];
+    displayedColumns: string[] = ['select', 'name', 'preparationTime', 'difficulty', 'ingredients', 'type'];
     private backendAccessService = inject(BackendAccessService);
 
     ngOnInit() {
         this.backendAccessService.getCocktailsMenu().subscribe((cocktails) => {
             this.cocktails = cocktails;
         });
+    }
+
+    /** Whether the number of selected elements matches the total number of rows. */
+    isAllSelected() {
+        const numSelected = this.selection.selected.length;
+        const numRows = this.cocktails.length;
+        return numSelected === numRows;
+    }
+
+    /** Selects all rows if they are not all selected; otherwise clear selection. */
+    toggleAllRows() {
+        if (this.isAllSelected()) {
+            this.selection.clear();
+            return;
+        }
+
+        this.selection.select(...this.cocktails);
     }
 }

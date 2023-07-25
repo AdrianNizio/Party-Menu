@@ -1,7 +1,7 @@
 <ng-template #drawerButton>
     <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
 </ng-template>
-<app-party-menu-navbar [drawerButton]="drawerButton"></app-party-menu-navbar>
+<app-party-menu-navbar class="sticky-top" [drawerButton]="drawerButton"></app-party-menu-navbar>
 <mat-drawer-container [hasBackdrop]="'true'">
     <mat-drawer #drawer [mode]="'over'"
         ><div class="d-flex justify-content-center flex-column vh-100-56">

@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./table-actions.component.scss'],
     templateUrl: './table-actions.component.html',
 })
-export class TableActionsComponent {}
+export class TableActionsComponent {
+    dummyAction() {}
+}

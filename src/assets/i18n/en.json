@@ -34,13 +34,28 @@
         "Dash": "Dash",
         "Splash": "Splash"
     },
-    "Difficulties":{
+    "Difficulties": {
         "Easy": "Easy",
         "Medium": "Medium",
         "Hard": "Hard",
         "Exprert": "Exprert"
     },
-    "Time":{
+    "Time": {
         "MinutesWithValue": "{{minutesValue}} minutes"
+    },
+    "Table": {
+        "TableHead": {
+            "Name": "Name",
+            "PreparationTime": "Preparation time",
+            "Difficulty": "Difficulty",
+            "Ingredients": "Ingredients",
+            "Type": "Type"
+        },
+        "Actions": {
+            "ButtonAddNewRecipe": "Add new recipe",
+            "ButtonAddNewMenu": "Add new menu",
+            "ButtonRemove": "Remove items"
+        },
+        "Filters": {}
     }
 }

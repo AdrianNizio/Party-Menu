@@ -1,1 +1,16 @@
-<p>table-actions works!</p>
+<mat-toolbar class="background-black d-flex justify-content-between">
+    <div class="d-flex">
+        <button (click)="dummyAction()" mat-raised-button color="primary">
+            {{'Table.Actions.ButtonAddNewRecipe' | translate}} <mat-icon>add</mat-icon>
+        </button>
+        <button (click)="dummyAction()" mat-raised-button color="primary" class="mx-2">
+            {{'Table.Actions.ButtonAddNewMenu' | translate}} <mat-icon>add</mat-icon>
+        </button>
+        <button (click)="dummyAction()" mat-raised-button color="primary" class="mx-2">
+            {{'Table.Actions.ButtonRemove' | translate}} <mat-icon>delete_outline</mat-icon>
+        </button>
+    </div>
+    <button mat-icon-button>
+        <mat-icon>filter_list</mat-icon>
+    </button>
+</mat-toolbar>
