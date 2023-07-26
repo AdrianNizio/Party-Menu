@@ -1,52 +1,7 @@
 <app-table-actions [drawer]="drawer"></app-table-actions>
 
 <mat-drawer-container hasBackdrop="false">
-    <mat-drawer #drawer position="end" mode="over" class="test">
-        <mat-slide-toggle [color]="'primary'"> Slide me! </mat-slide-toggle>
-        <mat-slide-toggle [color]="'primary'"> Slide me! </mat-slide-toggle
-        ><mat-form-field>
-            <mat-label>Clearable input</mat-label>
-            <input matInput type="text" />
-            <button matSuffix mat-icon-button>
-                <mat-icon>close</mat-icon>
-            </button> </mat-form-field
-        ><mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title> Personal data </mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-checkbox>Pepperoni</mat-checkbox>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title> Personal data </mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-checkbox>Pepperoni</mat-checkbox>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title> Personal data </mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-checkbox>Pepperoni</mat-checkbox>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title> Personal data </mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-checkbox>Pepperoni</mat-checkbox>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title> Personal data </mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-checkbox>Pepperoni</mat-checkbox>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title> Personal data </mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-checkbox>Pepperoni</mat-checkbox>
-        </mat-expansion-panel>
-    </mat-drawer>
+    <mat-drawer #drawer position="end" mode="over" class="width-for-filters-side"> <app-table-filters></app-table-filters> </mat-drawer>
 
     <section style="overflow-y: scroll; max-height: calc(100vh - 130px)">
         <table mat-table [dataSource]="cocktails" class="mat-elevation-z8">
