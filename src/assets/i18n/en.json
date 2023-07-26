@@ -1,61 +1,66 @@
 {
+    "Difficulties": {
+        "Easy": "Easy",
+        "Exprert": "Exprert",
+        "Hard": "Hard",
+        "Medium": "Medium"
+    },
+    "MeasurementUnits": {
+        "Dash": "Dash",
+        "Egg": "Egg",
+        "Liter": "l",
+        "Milliliter": "ml",
+        "Splash": "Splash",
+        "Tablespoon": "Tablespoon",
+        "Teaspoon": "Teaspoon"
+    },
     "MenuButtons": {
-        "Menus": "Menus",
-        "ListOfAllRecipes": "List of all recipes",
         "AddNewRecipe": "Add new recipe",
-        "Settings": "Settings",
-        "ViewMenus": "View menus",
-        "CreateNewMenu": "Create new menu",
         "Alcohol": "Alcohol",
-        "Food": "Food",
         "All": "All",
-        "CombinedMenus": "Combined"
+        "CombinedMenus": "Combined",
+        "CreateNewMenu": "Create new menu",
+        "Food": "Food",
+        "ListOfAllRecipes": "List of all recipes",
+        "Menus": "Menus",
+        "Settings": "Settings",
+        "ViewMenus": "View menus"
     },
     "RecipeCreation": {
         "AddNewIngredient": "Add new ingredient",
-        "RecipeIngredient": "Ingredient",
-        "RecipeMeasurementUnit": "Measurement Unit",
-        "RecipeHowMuchOfIngredient": "How much",
-        "RecipeTitle": "Dish/Cocktail name:",
-        "RecipeProcess": "Describe process:",
-        "RecipeListOfIngredients": "Ingredients:",
-        "RecipePictureForGuests": "Picture displayed to guests",
-        "RecipePictureForCreator": "Picture displayed to chef/mixologist",
         "RecipeGarnish": "Garnish:",
+        "RecipeGlassPlate": "Glass/Plate suggestion:",
+        "RecipeHowMuchOfIngredient": "How much",
+        "RecipeIngredient": "Ingredient",
+        "RecipeListOfIngredients": "Ingredients:",
+        "RecipeMeasurementUnit": "Measurement Unit",
         "RecipeNotes": "Notes:",
-        "RecipeGlassPlate": "Glass/Plate suggestion:"
+        "RecipePictureForCreator": "Picture displayed to chef/mixologist",
+        "RecipePictureForGuests": "Picture displayed to guests",
+        "RecipeProcess": "Describe process:",
+        "RecipeTitle": "Dish/Cocktail name:"
     },
-    "MeasurementUnits": {
-        "Teaspoon": "Teaspoon",
-        "Tablespoon": "Tablespoon",
-        "Egg": "Egg",
-        "Milliliter": "ml",
-        "Liter": "l",
-        "Dash": "Dash",
-        "Splash": "Splash"
-    },
-    "Difficulties": {
-        "Easy": "Easy",
-        "Medium": "Medium",
-        "Hard": "Hard",
-        "Exprert": "Exprert"
+    "Table": {
+        "Actions": {
+            "ButtonAddNewMenu": "Add new menu",
+            "ButtonAddNewRecipe": "Add new recipe",
+            "ButtonRemove": "Remove items",
+            "TableDisplayMode": "Table display mode"
+        },
+        "Filters": {},
+        "TableHead": {
+            "Difficulty": "Difficulty",
+            "Ingredients": "Ingredients",
+            "Name": "Name",
+            "PreparationTime": "Preparation time",
+            "Type": "Type"
+        },
+        "TableModes": {
+            "Menus": "Menus",
+            "Recipes": "Recipes"
+        }
     },
     "Time": {
         "MinutesWithValue": "{{minutesValue}} minutes"
-    },
-    "Table": {
-        "TableHead": {
-            "Name": "Name",
-            "PreparationTime": "Preparation time",
-            "Difficulty": "Difficulty",
-            "Ingredients": "Ingredients",
-            "Type": "Type"
-        },
-        "Actions": {
-            "ButtonAddNewRecipe": "Add new recipe",
-            "ButtonAddNewMenu": "Add new menu",
-            "ButtonRemove": "Remove items"
-        },
-        "Filters": {}
     }
 }
