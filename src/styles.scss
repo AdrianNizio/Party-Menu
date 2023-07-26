@@ -1,3 +1,11 @@
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+@import 'bootstrap/scss/mixins/_breakpoints';
+
+:root {
+    --breakpoint-md: #{map-get($grid-breakpoints, md)};
+}
+
 body {
     overflow-x: hidden;
 }

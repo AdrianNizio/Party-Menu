@@ -1,58 +1,107 @@
-<app-table-actions></app-table-actions>
+<app-table-actions [drawer]="drawer"></app-table-actions>
 
-<section style="overflow: scroll; max-height: calc(100vh - 130px)">
-    <table mat-table [dataSource]="cocktails" class="mat-elevation-z8">
-        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+<mat-drawer-container hasBackdrop="false">
+    <mat-drawer #drawer position="end" mode="over" class="test">
+        <mat-slide-toggle [color]="'primary'"> Slide me! </mat-slide-toggle>
+        <mat-slide-toggle [color]="'primary'"> Slide me! </mat-slide-toggle
+        ><mat-form-field>
+            <mat-label>Clearable input</mat-label>
+            <input matInput type="text" />
+            <button matSuffix mat-icon-button>
+                <mat-icon>close</mat-icon>
+            </button> </mat-form-field
+        ><mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Personal data </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-checkbox>Pepperoni</mat-checkbox>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Personal data </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-checkbox>Pepperoni</mat-checkbox>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Personal data </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-checkbox>Pepperoni</mat-checkbox>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Personal data </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-checkbox>Pepperoni</mat-checkbox>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Personal data </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-checkbox>Pepperoni</mat-checkbox>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title> Personal data </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-checkbox>Pepperoni</mat-checkbox>
+        </mat-expansion-panel>
+    </mat-drawer>
 
-        <ng-container matColumnDef="select">
-            <th mat-header-cell *matHeaderCellDef>
-                <mat-checkbox
-                    (change)="$event ? toggleAllRows() : null"
-                    [checked]="selection.hasValue() && isAllSelected()"
-                    [indeterminate]="selection.hasValue() && !isAllSelected()"
-                >
-                </mat-checkbox>
-            </th>
-            <td mat-cell *matCellDef="let row">
-                <mat-checkbox
-                    (click)="$event.stopPropagation()"
-                    (change)="$event ? selection.toggle(row) : null"
-                    [checked]="selection.isSelected(row)"
-                >
-                </mat-checkbox>
-            </td>
-        </ng-container>
+    <section style="overflow-y: scroll; max-height: calc(100vh - 130px)">
+        <table mat-table [dataSource]="cocktails" class="mat-elevation-z8">
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>{{ 'Table.TableHead.Name' | translate }}</th>
-            <td mat-cell *matCellDef="let recipe">{{recipe.title}}</td>
-        </ng-container>
+            <ng-container matColumnDef="select">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox
+                        (change)="$event ? toggleAllRows() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()"
+                    >
+                    </mat-checkbox>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                    <mat-checkbox
+                        (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)"
+                    >
+                    </mat-checkbox>
+                </td>
+            </ng-container>
 
-        <ng-container matColumnDef="preparationTime">
-            <th mat-header-cell *matHeaderCellDef>{{ 'Table.TableHead.PreparationTime' | translate }}</th>
-            <td mat-cell *matCellDef="let recipe">
-                {{ 'Time.MinutesWithValue' | translate:{ minutesValue: (recipe.preparationTimeInSeconds | secondsToMinutes) } }}
-            </td>
-        </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>{{ 'Table.TableHead.Name' | translate }}</th>
+                <td mat-cell *matCellDef="let recipe">{{recipe.title}}</td>
+            </ng-container>
 
-        <ng-container matColumnDef="difficulty">
-            <th mat-header-cell *matHeaderCellDef>{{ 'Table.TableHead.Difficulty' | translate }}</th>
-            <td mat-cell *matCellDef="let recipe">{{recipe.difficulty | translateDifficulty | translate}}</td>
-        </ng-container>
+            <ng-container matColumnDef="preparationTime">
+                <th mat-header-cell *matHeaderCellDef>{{ 'Table.TableHead.PreparationTime' | translate }}</th>
+                <td mat-cell *matCellDef="let recipe">
+                    {{ 'Time.MinutesWithValue' | translate:{ minutesValue: (recipe.preparationTimeInSeconds | secondsToMinutes) } }}
+                </td>
+            </ng-container>
 
-        <ng-container matColumnDef="ingredients">
-            <th mat-header-cell *matHeaderCellDef>{{ 'Table.TableHead.Ingredients' | translate }}</th>
-            <td mat-cell *matCellDef="let recipe">
-                <ng-container *ngFor="let ingredient of recipe.ingredients ; last as isLast"
-                    ><span class="font-weight-light-custom">{{ingredient.name}}<span *ngIf="!isLast"> , </span></span></ng-container
-                >
-            </td>
-        </ng-container>
+            <ng-container matColumnDef="difficulty">
+                <th mat-header-cell *matHeaderCellDef>{{ 'Table.TableHead.Difficulty' | translate }}</th>
+                <td mat-cell *matCellDef="let recipe">{{recipe.difficulty | translateDifficulty | translate}}</td>
+            </ng-container>
 
-        <ng-container matColumnDef="type">
-            <th mat-header-cell *matHeaderCellDef>{{ 'Table.TableHead.Type' | translate }}</th>
-            <td mat-cell *matCellDef="let recipe">{{recipe.type}}</td>
-        </ng-container>
-    </table>
-</section>
+            <ng-container matColumnDef="ingredients">
+                <th mat-header-cell *matHeaderCellDef>{{ 'Table.TableHead.Ingredients' | translate }}</th>
+                <td mat-cell *matCellDef="let recipe">
+                    <ng-container *ngFor="let ingredient of recipe.ingredients ; last as isLast"
+                        ><span class="font-weight-light-custom">{{ingredient.name}}<span *ngIf="!isLast"> , </span></span></ng-container
+                    >
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef>{{ 'Table.TableHead.Type' | translate }}</th>
+                <td mat-cell *matCellDef="let recipe">{{recipe.type}}</td>
+            </ng-container>
+        </table>
+    </section>
+</mat-drawer-container>
