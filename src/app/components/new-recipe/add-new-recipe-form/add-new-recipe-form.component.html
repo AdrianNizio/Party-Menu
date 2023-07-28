@@ -1,78 +1,191 @@
-<form class="d-flex flex-column p-5" [formGroup]="ingredientForm">
-    <mat-form-field appearance="fill">
-        <mat-label>{{'RecipeCreation.RecipeTitle' | translate}}</mat-label>
-        <input matInput placeholder="{{'RecipeCreation.RecipeTitle' | translate}}" formControlName="recipeTitle" />
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-
-    <mat-label>{{'RecipeCreation.RecipeListOfIngredients' | translate}}</mat-label>
-    <div formArrayName="recipeListOfIngredients">
-        <div *ngFor="let ingredient of ingredients.controls; let i = index">
-            <div [formGroupName]="i">
-                <mat-form-field appearance="fill">
-                    <mat-label>{{'RecipeCreation.RecipeIngredient' | translate}}</mat-label>
-                    <input matInput placeholder="{{'RecipeCreation.RecipeIngredient' | translate}}" formControlName="ingredient" />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>{{'RecipeCreation.RecipeHowMuchOfIngredient' | translate}}</mat-label>
-                    <input matInput placeholder="{{'RecipeCreation.RecipeHowMuchOfIngredient' | translate}}" formControlName="quantity" />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>{{'RecipeCreation.RecipeMeasurementUnit' | translate}}</mat-label
-                    ><mat-select formControlName="measurementUnit">
-                        <mat-option value="option">{{'MeasurementUnits.Dash' | translate }}</mat-option>
-                        <mat-option value="option">{{'MeasurementUnits.Splash' | translate }}</mat-option>
-                        <mat-option value="option">{{'MeasurementUnits.Liter' | translate }}</mat-option>
-                        <mat-option value="option">{{'MeasurementUnits.Milliliter' | translate }}</mat-option>
-                        <mat-option value="option">{{'MeasurementUnits.Egg' | translate }}</mat-option>
-                        <mat-option value="option">{{'MeasurementUnits.Teaspoon' | translate }}</mat-option>
-                        <mat-option value="option">{{'MeasurementUnits.Tablespoon' | translate }}</mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <button (click)="removeIngredient(i)" mat-fab color="error" aria-label="Example icon button with a home icon">
-                    <mat-icon>remove</mat-icon>
-                </button>
-            </div>
-        </div>
-    </div>
+<ng-template #stepperNavButtons let-stepper="myStepper">
     <div>
-        <mat-label>{{'RecipeCreation.AddNewIngredient' | translate}}</mat-label>
-        <button (click)="addIngredient()" mat-fab color="warn" aria-label="Example icon button with a home icon">
-            <mat-icon>add</mat-icon>
-        </button>
+        <button mat-button (click)="goBack()" type="button">Back</button>
+        <button mat-button (click)="goForward()" type="button">Next</button>
     </div>
+</ng-template>
 
-    <app-file-upload-component
-        [formControlLabel]="'RecipeCreation.RecipePictureForGuests'"
-        [control]="ingredientForm.controls['recipePictureForGuests']"
-    ></app-file-upload-component>
+<ng-template #stepperContent>
+    <mat-step [stepControl]="addNewRecipeForm">
+        <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.Title' | translate}}</ng-template>
 
-    <app-file-upload-component
-        [formControlLabel]="'RecipeCreation.RecipePictureForCreator'"
-        [control]="ingredientForm.controls['recipePictureForCreator']"
-    ></app-file-upload-component>
+        <mat-form-field appearance="fill">
+            <mat-label>{{'RecipeCreation.Form.Title' | translate}}</mat-label>
+            <input matInput placeholder="{{'RecipeCreation.Form.Title' | translate}}" formControlName="recipeTitle" />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
 
-    <mat-form-field appearance="fill">
-        <mat-label>{{'RecipeCreation.RecipeProcess' | translate}}</mat-label>
-        <input matInput placeholder="{{'RecipeCreation.RecipeProcess' | translate}}" formControlName="recipeProcess" />
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
 
-    <mat-form-field appearance="fill">
-        <mat-label>{{'RecipeCreation.RecipeGarnish' | translate}}</mat-label>
-        <input matInput placeholder="{{'RecipeCreation.RecipeGarnish' | translate}}" formControlName="recipeGarnish" />
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
+    <mat-step [stepControl]="addNewRecipeForm">
+        <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.ListOfIngredients' | translate}}</ng-template>
 
-    <mat-form-field appearance="fill">
-        <mat-label>{{'RecipeCreation.RecipeNotes' | translate}}</mat-label>
-        <input matInput placeholder="{{'RecipeCreation.RecipeNotes' | translate}}" formControlName="recipeNotes" />
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
+        <mat-label>{{'RecipeCreation.Form.ListOfIngredients' | translate}}</mat-label>
+        <app-add-ingredients [addNewRecipeForm]="addNewRecipeForm"></app-add-ingredients>
 
-    <mat-form-field appearance="fill">
-        <mat-label>{{'RecipeCreation.RecipeGlassPlate' | translate}}</mat-label>
-        <input matInput placeholder="{{'RecipeCreation.RecipeGlassPlate' | translate}}" formControlName="recipeGlassPlate" />
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
+        <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+    </mat-step>
+
+    <mat-step [stepControl]="addNewRecipeForm">
+        <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.PictureForGuests' | translate}}</ng-template>
+
+        <app-file-upload-component
+            [formControlLabel]="'RecipeCreation.Form.PictureForGuests'"
+            [control]="addNewRecipeForm.controls['recipePictureForGuests']"
+        >
+        </app-file-upload-component>
+
+        <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+    </mat-step>
+
+    <mat-step [stepControl]="addNewRecipeForm">
+        <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.PictureForCreator' | translate}}</ng-template>
+        <app-file-upload-component
+            [formControlLabel]="'RecipeCreation.Form.PictureForCreator'"
+            [control]="addNewRecipeForm.controls['recipePictureForCreator']"
+        >
+        </app-file-upload-component>
+        <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+    </mat-step>
+
+    <mat-step [stepControl]="addNewRecipeForm">
+        <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.Process' | translate}}</ng-template>
+        <mat-form-field appearance="fill">
+            <mat-label>{{'RecipeCreation.Form.Process' | translate}}</mat-label>
+            <input matInput placeholder="{{'RecipeCreation.Form.Process' | translate}}" formControlName="recipeProcess" />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+    </mat-step>
+
+    <mat-step [stepControl]="addNewRecipeForm">
+        <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.Garnish' | translate}}</ng-template>
+        <mat-form-field appearance="fill">
+            <mat-label>{{'RecipeCreation.Form.Garnish' | translate}}</mat-label>
+            <input matInput placeholder="{{'RecipeCreation.Form.Garnish' | translate}}" formControlName="recipeGarnish" />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+    </mat-step>
+
+    <mat-step [stepControl]="addNewRecipeForm">
+        <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.Notes' | translate}}</ng-template>
+        <mat-form-field appearance="fill">
+            <mat-label>{{'RecipeCreation.Form.Notes' | translate}}</mat-label>
+            <input matInput placeholder="{{'RecipeCreation.Form.Notes' | translate}}" formControlName="recipeNotes" />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+    </mat-step>
+
+    <mat-step [stepControl]="addNewRecipeForm">
+        <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.GlassPlate' | translate}}</ng-template>
+        <mat-form-field appearance="fill">
+            <mat-label>{{'RecipeCreation.Form.GlassPlate' | translate}}</mat-label>
+            <input matInput placeholder="{{'RecipeCreation.Form.GlassPlate' | translate}}" formControlName="recipeGlassPlate" />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.Done' | translate}}</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</ng-template>
+
+<form [formGroup]="addNewRecipeForm">
+    <mat-stepper labelPosition="bottom" #stepper [orientation]="isScreenWiderThanMd ? 'horizontal' : 'vertical'">
+        <mat-step [stepControl]="addNewRecipeForm" errorMessage="{{'RecipeCreation.Stepper.StepsErrors.Title' | translate}}">
+            <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.Title' | translate}}</ng-template>
+
+            <mat-form-field appearance="fill">
+                <mat-label>{{'RecipeCreation.Form.Title' | translate}}</mat-label>
+                <input matInput placeholder="{{'RecipeCreation.Form.Title' | translate}}" formControlName="recipeTitle" required />
+            </mat-form-field>
+
+            <div>
+                <button mat-button matStepperNext type="button">Next</button>
+            </div>
+        </mat-step>
+
+        <mat-step [stepControl]="addNewRecipeForm" errorMessage="{{'RecipeCreation.Stepper.StepsErrors.ListOfIngredients' | translate}}">
+            <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.ListOfIngredients' | translate}}</ng-template>
+
+            <app-add-ingredients [addNewRecipeForm]="addNewRecipeForm"></app-add-ingredients>
+
+            <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+        </mat-step>
+
+        <mat-step [stepControl]="addNewRecipeForm" errorMessage="{{'RecipeCreation.Stepper.StepsErrors.PictureForGuests' | translate}}">
+            <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.PictureForGuests' | translate}}</ng-template>
+
+            <app-file-upload-component
+                [formControlLabel]="'RecipeCreation.Form.PictureForGuests'"
+                [control]="addNewRecipeForm.controls['recipePictureForGuests']"
+            >
+            </app-file-upload-component>
+
+            <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+        </mat-step>
+
+        <mat-step [stepControl]="addNewRecipeForm" errorMessage="{{'RecipeCreation.Stepper.StepsErrors.PictureForCreator' | translate}}">
+            <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.PictureForCreator' | translate}}</ng-template>
+            <app-file-upload-component
+                [formControlLabel]="'RecipeCreation.Form.PictureForCreator'"
+                [control]="addNewRecipeForm.controls['recipePictureForCreator']"
+            >
+            </app-file-upload-component>
+            <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+        </mat-step>
+
+        <mat-step [stepControl]="addNewRecipeForm" errorMessage="{{'RecipeCreation.Stepper.StepsErrors.Process' | translate}}">
+            <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.Process' | translate}}</ng-template>
+            <app-add-preparation-preparation-steps [addNewRecipeForm]="addNewRecipeForm"></app-add-preparation-preparation-steps>
+            <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+        </mat-step>
+
+        <mat-step [stepControl]="addNewRecipeForm" errorMessage="{{'RecipeCreation.Stepper.StepsErrors.Garnish' | translate}}">
+            <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.Garnish' | translate}}</ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label>{{'RecipeCreation.Form.Garnish' | translate}}</mat-label>
+                <input matInput placeholder="{{'RecipeCreation.Form.Garnish' | translate}}" formControlName="recipeGarnish" />
+            </mat-form-field>
+            <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+        </mat-step>
+
+        <mat-step [stepControl]="addNewRecipeForm" errorMessage="{{'RecipeCreation.Stepper.StepsErrors.Notes' | translate}}">
+            <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.Notes' | translate}}</ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label>{{'RecipeCreation.Form.Notes' | translate}}</mat-label>
+                <input matInput placeholder="{{'RecipeCreation.Form.Notes' | translate}}" formControlName="recipeNotes" />
+            </mat-form-field>
+            <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+        </mat-step>
+
+        <mat-step [stepControl]="addNewRecipeForm" errorMessage="{{'RecipeCreation.Stepper.StepsErrors.GlassPlate' | translate}}">
+            <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.GlassPlate' | translate}}</ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label>{{'RecipeCreation.Form.GlassPlate' | translate}}</mat-label>
+                <input matInput placeholder="{{'RecipeCreation.Form.GlassPlate' | translate}}" formControlName="recipeGlassPlate" />
+            </mat-form-field>
+            <ng-container *ngTemplateOutlet="stepperNavButtons"></ng-container>
+        </mat-step>
+
+        <mat-step>
+            <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.Done' | translate}}</ng-template>
+            <p>You are now done.</p>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+        </mat-step>
+    </mat-stepper>
 </form>

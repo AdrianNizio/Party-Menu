@@ -1,40 +1,41 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
+import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { MatStepper } from '@angular/material/stepper';
+import { BreakpointObserverService } from 'src/app/services/breakpoint-observer.service';
 
 @Component({
     selector: 'app-add-new-recipe-form',
     styleUrls: ['./add-new-recipe-form.component.scss'],
     templateUrl: './add-new-recipe-form.component.html',
 })
-export class AddNewRecipeFormComponent {
-    ingredientForm = new FormGroup({
-        recipeGarnish: new FormControl(''),
-        recipeGlassPlate: new FormControl(''),
-        recipeListOfIngredients: new FormArray([]),
-        recipeNotes: new FormControl(''),
-        recipePictureForCreator: new FormControl(''),
-        recipePictureForGuests: new FormControl(''),
-        recipeProcess: new FormControl(''),
-        recipeTitle: new FormControl(''),
+export class AddNewRecipeFormComponent implements OnInit {
+    @ViewChild('stepper') myStepper: MatStepper;
+    private breakpointObserverService = inject(BreakpointObserverService);
+
+    isScreenWiderThanMd: boolean = true;
+
+    addNewRecipeForm = new FormGroup({
+        recipeGarnish: new FormControl('', Validators.required),
+        recipeGlassPlate: new FormControl('', Validators.required),
+        recipeListOfIngredients: new FormArray([], Validators.required),
+        recipeListOfPreparationSteps: new FormArray([], Validators.required),
+        recipeNotes: new FormControl('', Validators.required),
+        recipePictureForCreator: new FormControl('', Validators.required),
+        recipePictureForGuests: new FormControl('', Validators.required),
+        recipeTitle: new FormControl('', Validators.required),
     });
 
-    constructor(private formBuilder: FormBuilder) {}
-
-    get ingredients() {
-        return this.ingredientForm.get('recipeListOfIngredients') as unknown as FormArray;
-    }
-
-    addIngredient() {
-        const newIngredient = this.formBuilder.group({
-            ingredient: new FormControl(''),
-            measurementUnit: new FormControl(''),
-            quantity: new FormControl(''),
+    ngOnInit() {
+        this.breakpointObserverService.getMediumBreakpoint().subscribe((value) => {
+            this.isScreenWiderThanMd = value;
         });
-
-        this.ingredients.push(newIngredient);
     }
 
-    removeIngredient(index: number) {
-        this.ingredients.removeAt(index);
+    goBack() {
+        this.myStepper.previous();
+    }
+
+    goForward() {
+        this.myStepper.next();
     }
 }

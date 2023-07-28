@@ -26,6 +26,9 @@ import { StoreModule } from '@ngrx/store';
 import { PartyMenuNavbarComponent } from './components/navigation/party-menu-navbar/party-menu-navbar.component';
 import { TranslateDifficultyPipe } from 'src/pipes/difficulty-pipe/difficulty-pipe.pipe';
 import { secondsToMinutes } from 'src/pipes/seconds-to-minutes-pipe/seconds-to-minutes-pipe.pipe';
+import { AddIngredientsComponent } from './components/new-recipe/add-ingredients/add-ingredients.component';
+import { AddPreparationStepsComponent } from './components/new-recipe/add-preparation-steps/add-preparation-steps.component';
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -51,6 +54,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         PartyMenuNavbarComponent,
         TranslateDifficultyPipe,
         secondsToMinutes,
+        AddIngredientsComponent,
+        AddPreparationStepsComponent,
     ],
     imports: [
         TranslateModule.forRoot({
@@ -69,6 +74,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         ReactiveFormsModule,
         StoreModule.forRoot({}, {}),
     ],
-    providers: [],
+    providers: [
+        {
+            provide: STEPPER_GLOBAL_OPTIONS,
+            useValue: { showError: true },
+        },
+    ],
 })
 export class AppModule {}

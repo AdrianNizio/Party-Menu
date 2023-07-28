@@ -1,0 +1,49 @@
+<form [formGroup]="addNewRecipeForm">
+    <div formArrayName="recipeListOfIngredients">
+        <div *ngFor="let ingredient of ingredients.controls; let i = index">
+            <div [formGroupName]="i">
+                <mat-form-field appearance="fill">
+                    <mat-label>{{'RecipeCreation.Form.Ingredient' | translate}}</mat-label>
+                    <input matInput placeholder="{{'RecipeCreation.Form.Ingredient' | translate}}" formControlName="ingredient" />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>{{'RecipeCreation.Form.HowMuchOfIngredient' | translate}}</mat-label>
+                    <input matInput placeholder="{{'RecipeCreation.Form.HowMuchOfIngredient' | translate}}" formControlName="quantity" />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>{{'RecipeCreation.Form.MeasurementUnit' | translate}}</mat-label>
+                    <mat-select formControlName="measurementUnit">
+                        <mat-option value="option">{{'MeasurementUnits.Dash' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Splash' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Liter' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Milliliter' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Egg' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Teaspoon' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Tablespoon' | translate }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>{{'RecipeCreation.Form.IngredientType' | translate}}</mat-label>
+                    <mat-select formControlName="ingredientType">
+                        <mat-option value="option">{{'MeasurementUnits.Dash' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Splash' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Liter' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Milliliter' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Egg' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Teaspoon' | translate }}</mat-option>
+                        <mat-option value="option">{{'MeasurementUnits.Tablespoon' | translate }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button (click)="removeIngredient(i)" mat-fab color="error">
+                    <mat-icon>remove</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center">
+        <button (click)="addIngredient()" mat-fab extended color="primary">
+            <span>{{'RecipeCreation.Form.AddNewIngredient' | translate}}</span>
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</form>

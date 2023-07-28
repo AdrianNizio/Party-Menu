@@ -1,0 +1,19 @@
+<form [formGroup]="addNewRecipeForm">
+    <div formArrayName="recipeListOfPreparationSteps">
+        <div *ngFor="let preparationStep of preparationSteps.controls; let i = index">
+            <div [formGroupName]="i">
+                <mat-form-field appearance="fill">
+                    <mat-label>{{'RecipeCreation.Form.PreparationStep' | translate}}</mat-label>
+                    <input matInput placeholder="{{'RecipeCreation.Form.PreparationStep' | translate}}" formControlName="preparationStep" />
+                    <mat-icon (click)="removePreparationStep(i)" matSuffix>delete_outline</mat-icon>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center">
+        <button (click)="addPreparationStep()" mat-fab extended color="primary">
+            <span>{{'RecipeCreation.Form.AddNewPreparationStep' | translate}}</span>
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</form>

@@ -31,18 +31,46 @@
         "ViewMenus": "View menus"
     },
     "RecipeCreation": {
-        "AddNewIngredient": "Add new ingredient",
-        "RecipeGarnish": "Garnish:",
-        "RecipeGlassPlate": "Glass/Plate suggestion:",
-        "RecipeHowMuchOfIngredient": "How much",
-        "RecipeIngredient": "Ingredient",
-        "RecipeListOfIngredients": "Ingredients:",
-        "RecipeMeasurementUnit": "Measurement Unit",
-        "RecipeNotes": "Notes:",
-        "RecipePictureForCreator": "Picture displayed to chef/mixologist",
-        "RecipePictureForGuests": "Picture displayed to guests",
-        "RecipeProcess": "Describe process:",
-        "RecipeTitle": "Dish/Cocktail name:"
+        "Form": {
+            "AddNewIngredient": "Add new ingredient",
+            "AddNewPreparationStep": "Add new step",
+            "Garnish": "Garnish",
+            "GlassPlate": "Glass/Plate suggestion",
+            "HowMuchOfIngredient": "How much",
+            "Ingredient": "Ingredient",
+            "IngredientType": "Ingredient type",
+            "ListOfIngredients": "Ingredients",
+            "MeasurementUnit": "Measurement Unit",
+            "Notes": "Notes",
+            "PictureForCreator": "Picture displayed to chef/mixologist",
+            "PictureForGuests": "Picture displayed to guests",
+            "PreparationStep": "Preparation step",
+            "Process": "Describe process",
+            "Title": "Dish/Cocktail name"
+        },
+        "Stepper": {
+            "StepsLabels": {
+                "Done": "Done",
+                "Garnish": "Garnish",
+                "GlassPlate": "Glass/Plate",
+                "ListOfIngredients": "Ingredients",
+                "Notes": "Notes",
+                "PictureForCreator": "Picture 1",
+                "PictureForGuests": "Picture 2",
+                "Process": "Process",
+                "Title": "Name"
+            },
+            "StepsErrors": {
+                "Garnish": "Garnish is required",
+                "GlassPlate": "Glass/Plate is required",
+                "ListOfIngredients": "Ingredients are required",
+                "Notes": "Notes",
+                "PictureForCreator": "Picture 1 is required",
+                "PictureForGuests": "Picture 2 is required",
+                "Process": "Process is required",
+                "Title": "Name is required"
+            }
+        }
     },
     "Table": {
         "Actions": {
