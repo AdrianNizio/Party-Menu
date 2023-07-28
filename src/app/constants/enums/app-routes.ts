@@ -1,5 +1,5 @@
 export enum AppRoutes {
-    Mixologist = 'all-items-list/mixologist',
+    Mixologist = 'todays-menu/mixologist',
     WildCard = '**',
     Empty = '',
     TableRoute = 'all-items-list',

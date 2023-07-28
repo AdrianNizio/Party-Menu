@@ -59,7 +59,7 @@ const routes: Routes = [
         path: AppRoutes.CreateNewMenusRoute,
     },
     {
-        component: WelcomeScreenComponent,
+        component: CocktailsMenuComponent,
         data: { animation: 'isRight' },
         path: AppRoutes.TodaysMenuRoute,
     },

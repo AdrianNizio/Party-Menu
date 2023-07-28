@@ -9,7 +9,7 @@ import { ButtonsByUrlLookupTable } from '../constants/models/lookup-table';
 export class MenuButtonsProviderService {
     buttonClasses = 'btn btn-primary';
 
-    mainNavButtons: Button[] = [
+    sharedNavigationButtons: Button[] = [
         {
             classes: this.buttonClasses,
             route: AppRoutes.TableRoute,
@@ -50,7 +50,7 @@ export class MenuButtonsProviderService {
         },
     ];
 
-    welcomeScreenButtons: Button[] = this.welcomeScreenSpecificButtons.concat(this.mainNavButtons);
+    welcomeScreenButtons: Button[] = this.welcomeScreenSpecificButtons.concat(this.sharedNavigationButtons);
 
     sidebarSpecificButtons: Button[] = [
         {
