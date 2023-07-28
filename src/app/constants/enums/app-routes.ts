@@ -7,8 +7,8 @@ export enum AppRoutes {
     FoodRoute = 'food',
     NewItemRoute = 'create-new-item',
     SettingsRoute = 'settings',
-    MenusMenuRoute = 'menus-menu',
     NewRecipeMenuRoute = 'add-new-recipe-menu',
-    ViewMenusMenuRoute = 'view-menus-menu',
-    CreateNewMenusMenuRoute = 'create-new-menus-menu',
+    ViewMenusRoute = 'view-menus',
+    CreateNewMenusRoute = 'create-new-menus',
+    TodaysMenuRoute = 'todays-menu',
 }

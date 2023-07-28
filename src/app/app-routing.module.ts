@@ -46,22 +46,22 @@ const routes: Routes = [
     {
         component: WelcomeScreenComponent,
         data: { animation: 'isRight' },
-        path: AppRoutes.MenusMenuRoute,
-    },
-    {
-        component: WelcomeScreenComponent,
-        data: { animation: 'isRight' },
         path: AppRoutes.NewRecipeMenuRoute,
     },
     {
         component: WelcomeScreenComponent,
         data: { animation: 'isRight' },
-        path: AppRoutes.ViewMenusMenuRoute,
+        path: AppRoutes.ViewMenusRoute,
     },
     {
         component: WelcomeScreenComponent,
         data: { animation: 'isRight' },
-        path: AppRoutes.CreateNewMenusMenuRoute,
+        path: AppRoutes.CreateNewMenusRoute,
+    },
+    {
+        component: WelcomeScreenComponent,
+        data: { animation: 'isRight' },
+        path: AppRoutes.TodaysMenuRoute,
     },
     {
         component: WelcomeScreenComponent,

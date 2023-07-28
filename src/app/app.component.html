@@ -3,9 +3,9 @@
 </ng-template>
 <app-party-menu-navbar class="sticky-top" [drawerButton]="drawerButton"></app-party-menu-navbar>
 <mat-drawer-container [hasBackdrop]="'true'">
-    <mat-drawer #drawer [mode]="'over'"
-        ><div class="d-flex justify-content-center flex-column vh-100-56">
-            <app-side-nav-container class="d-flex justify-content-center flex-column vh-100-56"></app-side-nav-container></div
+    <mat-drawer #drawer [mode]="'over'" class="width-side-bar"
+        ><div class="d-flex justify-content-center flex-column h-100">
+            <app-side-nav-container class="d-flex justify-content-center flex-column h-100"></app-side-nav-container></div
     ></mat-drawer>
     <mat-drawer-content>
         <div [@routeAnimations]="prepareRoute()">

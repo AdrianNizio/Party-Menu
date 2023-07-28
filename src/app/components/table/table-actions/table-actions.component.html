@@ -1,12 +1,12 @@
 <mat-toolbar class="background-black d-flex justify-content-between">
     <div #leftSideButtons class="d-flex align-items-center">
         <ng-container #addButtons>
-            <button *ngIf="isScreenWiderThanMd" (click)="dummyAction()" mat-fab extended color="primary">
+            <button *ngIf="isScreenWiderThanMd" (click)="navigateToCreationMenu()" mat-fab extended color="primary">
                 <span *ngIf="tableMode === TableModes.Recipes">{{'Table.Actions.ButtonAddNewRecipe' | translate}}</span>
                 <span *ngIf="tableMode === TableModes.Menus">{{'Table.Actions.ButtonAddNewMenu' | translate}}</span>
                 <mat-icon>add</mat-icon>
             </button>
-            <button *ngIf="!isScreenWiderThanMd" (click)="dummyAction()" mat-mini-fab color="primary" class="mx-2">
+            <button *ngIf="!isScreenWiderThanMd" (click)="navigateToCreationMenu()" mat-mini-fab color="primary" class="mx-2">
                 <mat-icon>add</mat-icon>
             </button>
         </ng-container>
@@ -22,7 +22,7 @@
     </div>
     <div #rightSideButtons class="d-flex align-items-center">
         <mat-form-field subscriptSizing="dynamic">
-            <mat-label>{{ 'TableActions.TableDisplayMode' | translate}}</mat-label>
+            <mat-label>{{ 'Table.Actions.TableDisplayMode' | translate}}</mat-label>
             <mat-select [(value)]="tableMode" (selectionChange)="test($event)">
                 <mat-option *ngFor="let mode of tableModesList" [value]="mode.value"> {{ mode.translationKey | translate}} </mat-option>
             </mat-select>

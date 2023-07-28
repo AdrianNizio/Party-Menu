@@ -15,15 +15,19 @@
         "Teaspoon": "Teaspoon"
     },
     "MenuButtons": {
+        "AddNewMenu": "Add new menu",
         "AddNewRecipe": "Add new recipe",
         "Alcohol": "Alcohol",
         "All": "All",
         "CombinedMenus": "Combined",
         "CreateNewMenu": "Create new menu",
         "Food": "Food",
+        "ListOfAllMenus": "List of all menus",
         "ListOfAllRecipes": "List of all recipes",
+        "MainMenu": "Main menu",
         "Menus": "Menus",
         "Settings": "Settings",
+        "TodaysMenu": "Today menu",
         "ViewMenus": "View menus"
     },
     "RecipeCreation": {

@@ -1,7 +1,7 @@
 <app-table-actions [drawer]="drawer"></app-table-actions>
 
 <mat-drawer-container hasBackdrop="false">
-    <mat-drawer #drawer position="end" mode="over" class="width-for-filters-side"> <app-table-filters></app-table-filters> </mat-drawer>
+    <mat-drawer #drawer position="end" mode="over" class="width-side-bar"> <app-table-filters></app-table-filters> </mat-drawer>
 
     <section style="overflow-y: scroll; max-height: calc(100vh - 130px)">
         <table mat-table [dataSource]="cocktails" class="mat-elevation-z8">
