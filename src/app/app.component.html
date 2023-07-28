@@ -1,5 +1,7 @@
 <ng-template #drawerButton>
-    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+    <button mat-raised-button (click)="drawer.toggle(); toggle()">
+        <mat-icon class="transform" [ngClass]="{'rotate': val}">chevron_right</mat-icon><mat-icon>menu</mat-icon>
+    </button>
 </ng-template>
 <app-party-menu-navbar class="sticky-top" [drawerButton]="drawerButton"></app-party-menu-navbar>
 <mat-drawer-container [hasBackdrop]="'true'">

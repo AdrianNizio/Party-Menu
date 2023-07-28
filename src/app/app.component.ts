@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit {
     title = 'cocktails';
+    val: boolean;
 
     constructor(translate: TranslateService, private contexts: ChildrenOutletContexts) {
         // this language will be used as a fallback when a translation isn't found in the current language
@@ -27,5 +28,10 @@ export class AppComponent implements OnInit {
 
     prepareRoute() {
         return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+    }
+
+    toggle() {
+        this.val = !this.val;
+        return this.val;
     }
 }
