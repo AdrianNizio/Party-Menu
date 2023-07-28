@@ -9,12 +9,7 @@ import { ButtonsByUrlLookupTable } from '../constants/models/lookup-table';
 export class MenuButtonsProviderService {
     buttonClasses = 'btn btn-primary';
 
-    welcomeScreenButtons: Button[] = [
-        {
-            classes: this.buttonClasses,
-            route: AppRoutes.TodaysMenuRoute,
-            text: 'MenuButtons.TodaysMenu',
-        },
+    mainNavButtons: Button[] = [
         {
             classes: this.buttonClasses,
             route: AppRoutes.TableRoute,
@@ -44,6 +39,25 @@ export class MenuButtonsProviderService {
             navigateData: 'settingsButtons',
             route: AppRoutes.SettingsRoute,
             text: 'MenuButtons.Settings',
+        },
+    ];
+
+    welcomeScreenSpecificButtons: Button[] = [
+        {
+            classes: this.buttonClasses,
+            route: AppRoutes.TodaysMenuRoute,
+            text: 'MenuButtons.TodaysMenu',
+        },
+    ];
+
+    welcomeScreenButtons: Button[] = this.welcomeScreenSpecificButtons.concat(this.mainNavButtons);
+
+    sidebarSpecificButtons: Button[] = [
+        {
+            classes: this.buttonClasses,
+            navigateData: '',
+            route: AppRoutes.Empty,
+            text: 'MenuButtons.MainMenu',
         },
     ];
 
@@ -97,45 +111,6 @@ export class MenuButtonsProviderService {
             classes: this.buttonClasses,
             route: AppRoutes.NewItemRoute,
             text: 'MenuButtons.Food',
-        },
-    ];
-
-    welcomeScreenButtons2: Button[] = [
-        {
-            classes: this.buttonClasses,
-            navigateData: '',
-            route: AppRoutes.Empty,
-            text: 'MenuButtons.MainMenu',
-        },
-        {
-            classes: this.buttonClasses,
-            route: AppRoutes.TableRoute,
-            tableFilters: '',
-            text: 'MenuButtons.ListOfAllMenus',
-        },
-        {
-            classes: this.buttonClasses,
-            route: AppRoutes.TableRoute,
-            tableFilters: '',
-            text: 'MenuButtons.ListOfAllRecipes',
-        },
-        {
-            classes: this.buttonClasses,
-            navigateData: 'newRecipeButtons',
-            route: AppRoutes.NewRecipeMenuRoute,
-            text: 'MenuButtons.AddNewRecipe',
-        },
-        {
-            classes: this.buttonClasses,
-            navigateData: 'newMenuButtons',
-            route: AppRoutes.CreateNewMenusRoute,
-            text: 'MenuButtons.AddNewMenu',
-        },
-        {
-            classes: 'btn btn-secondary',
-            navigateData: 'settingsButtons',
-            route: AppRoutes.SettingsRoute,
-            text: 'MenuButtons.Settings',
         },
     ];
 

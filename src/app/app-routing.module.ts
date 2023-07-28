@@ -54,7 +54,7 @@ const routes: Routes = [
         path: AppRoutes.ViewMenusRoute,
     },
     {
-        component: WelcomeScreenComponent,
+        component: AddNewRecipeFormComponent,
         data: { animation: 'isRight' },
         path: AppRoutes.CreateNewMenusRoute,
     },

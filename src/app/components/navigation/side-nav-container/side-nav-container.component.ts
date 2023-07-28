@@ -14,7 +14,7 @@ export class SideNavContainerComponent implements OnInit {
     router = inject(Router);
 
     ngOnInit() {
-        this.buttons = this.menuButtonsProviderService.welcomeScreenButtons2;
+        this.buttons = this.menuButtonsProviderService.sidebarSpecificButtons.concat(this.menuButtonsProviderService.mainNavButtons);
     }
 
     navigateToRoute(buttonData: Button) {
