@@ -11,3 +11,9 @@
         height: 100%;
     }
 }
+
+@media (min-width: 1062px) {
+    .mat-horizontal-content-container {
+        min-width: 1000px;
+    }
+}

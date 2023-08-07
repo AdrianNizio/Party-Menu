@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-add-preparation-preparation-steps',
@@ -8,6 +8,7 @@ import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 })
 export class AddPreparationStepsComponent {
     @Input() addNewRecipeForm: FormGroup;
+    @Input() isScreenWiderThanMd: boolean;
 
     constructor(private formBuilder: FormBuilder) {}
 
@@ -17,7 +18,7 @@ export class AddPreparationStepsComponent {
 
     addPreparationStep() {
         const newPreparationSteps = this.formBuilder.group({
-            preparationStep: new FormControl(''),
+            preparationStep: new FormControl('', Validators.required),
         });
 
         this.preparationSteps.push(newPreparationSteps);

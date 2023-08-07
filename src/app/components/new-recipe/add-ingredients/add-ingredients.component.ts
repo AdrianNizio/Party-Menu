@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-add-ingredients',
@@ -8,6 +8,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class AddIngredientsComponent {
     @Input() addNewRecipeForm: FormGroup;
+    @Input() isScreenWiderThanMd: boolean;
 
     constructor(private formBuilder: FormBuilder) {}
 
@@ -17,10 +18,10 @@ export class AddIngredientsComponent {
 
     addIngredient() {
         const newIngredient = this.formBuilder.group({
-            ingredient: new FormControl(''),
-            ingredientType: new FormControl(''),
-            measurementUnit: new FormControl(''),
-            quantity: new FormControl(''),
+            ingredient: new FormControl('', Validators.required),
+            ingredientType: new FormControl('', Validators.required),
+            measurementUnit: new FormControl('', Validators.required),
+            quantity: new FormControl('', Validators.required),
         });
 
         this.ingredients.push(newIngredient);

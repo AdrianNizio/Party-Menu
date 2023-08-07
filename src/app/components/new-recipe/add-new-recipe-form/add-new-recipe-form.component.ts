@@ -31,11 +31,15 @@ export class AddNewRecipeFormComponent implements OnInit {
         });
     }
 
-    goBack() {
+    stepperTriggerPrevious() {
         this.myStepper.previous();
     }
 
-    goForward() {
+    stepperTriggerNext() {
         this.myStepper.next();
+    }
+
+    submitForm(){
+        console.log(this.addNewRecipeForm)
     }
 }

@@ -4,13 +4,13 @@
             <div [formGroupName]="i">
                 <mat-form-field appearance="fill">
                     <mat-label>{{'RecipeCreation.Form.PreparationStep' | translate}}</mat-label>
-                    <input matInput placeholder="{{'RecipeCreation.Form.PreparationStep' | translate}}" formControlName="preparationStep" />
+                    <input matInput placeholder="{{'RecipeCreation.Form.PreparationStep' | translate}}" formControlName="preparationStep" required />
                     <mat-icon (click)="removePreparationStep(i)" matSuffix>delete_outline</mat-icon>
                 </mat-form-field>
             </div>
         </div>
     </div>
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center" [ngClass]="{'justify-content-center': isScreenWiderThanMd}">
         <button (click)="addPreparationStep()" mat-fab extended color="primary">
             <span>{{'RecipeCreation.Form.AddNewPreparationStep' | translate}}</span>
             <mat-icon>add</mat-icon>
