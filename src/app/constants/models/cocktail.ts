@@ -1,5 +1,6 @@
 const typeProperties = ['Alcohol', 'Food'] as const;
 export interface Cocktail {
+    id: string;
     title: string;
     ingredients: [
         {

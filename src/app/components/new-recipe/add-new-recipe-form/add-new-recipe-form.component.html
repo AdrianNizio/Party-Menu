@@ -101,8 +101,8 @@
     </mat-step>
 </ng-template>
 
-<form [formGroup]="addNewRecipeForm">
-    <mat-stepper labelPosition="bottom" #stepper [orientation]="isScreenWiderThanMd ? 'horizontal' : 'vertical'">
+<form [formGroup]="addNewRecipeForm" class="vh-100-56">
+    <mat-stepper labelPosition="bottom" #stepper [orientation]="isScreenWiderThanMd ? 'horizontal' : 'vertical'" class="h-100">
         <mat-step [stepControl]="addNewRecipeForm" errorMessage="{{'RecipeCreation.Stepper.StepsErrors.Title' | translate}}">
             <ng-template matStepLabel>{{'RecipeCreation.Stepper.StepsLabels.Title' | translate}}</ng-template>
 

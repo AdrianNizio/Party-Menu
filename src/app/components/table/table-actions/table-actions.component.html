@@ -11,11 +11,11 @@
             </button>
         </ng-container>
         <ng-container #deleteButtons>
-            <button *ngIf="isScreenWiderThanMd" (click)="dummyAction()" mat-fab extended color="primary" class="mx-2">
+            <button *ngIf="isScreenWiderThanMd" (click)="deleteItems()" mat-fab extended color="primary" class="mx-2">
                 {{'Table.Actions.ButtonRemove' | translate}} <mat-icon>delete_outline</mat-icon>
             </button>
 
-            <button *ngIf="!isScreenWiderThanMd" (click)="dummyAction()" mat-mini-fab color="primary" class="mx-2">
+            <button *ngIf="!isScreenWiderThanMd" (click)="deleteItems()" mat-mini-fab color="primary" class="mx-2">
                 <mat-icon>delete_outline</mat-icon>
             </button>
         </ng-container>
@@ -23,7 +23,7 @@
     <div #rightSideButtons class="d-flex align-items-center">
         <mat-form-field subscriptSizing="dynamic">
             <mat-label>{{ 'Table.Actions.TableDisplayMode' | translate}}</mat-label>
-            <mat-select [(value)]="tableMode" (selectionChange)="test($event)">
+            <mat-select [(value)]="tableMode" (selectionChange)="switchTableMode($event)">
                 <mat-option *ngFor="let mode of tableModesList" [value]="mode.value"> {{ mode.translationKey | translate}} </mat-option>
             </mat-select>
         </mat-form-field>

@@ -4,6 +4,7 @@ import { TableModes } from 'src/app/constants/enums/table-modes';
 import { BreakpointObserverService } from 'src/app/services/breakpoint-observer.service';
 import { DropdownItem } from 'src/app/constants/models/dropdown-item';
 import { Router } from '@angular/router';
+import { Cocktail } from 'src/app/constants/models/cocktail';
 
 @Component({
     selector: 'app-table-actions',
@@ -12,6 +13,10 @@ import { Router } from '@angular/router';
 })
 export class TableActionsComponent implements OnInit, OnDestroy {
     router = inject(Router);
+
+    @Input() selectedItems: Cocktail[] = [];
+    @Input() drawer: MatDrawer;
+
     isScreenWiderThanMd: boolean = true;
     readonly TableModes = TableModes;
     tableMode: string = TableModes.Recipes;
@@ -27,7 +32,6 @@ export class TableActionsComponent implements OnInit, OnDestroy {
         },
     ];
 
-    @Input() drawer: MatDrawer;
 
     constructor(private breakpointObserverService: BreakpointObserverService) {}
 
@@ -35,15 +39,18 @@ export class TableActionsComponent implements OnInit, OnDestroy {
         this.breakpointObserverService.getMediumBreakpoint().subscribe((value) => {
             this.isScreenWiderThanMd = value;
         });
+        console.log(this.tableMode);
     }
 
     ngOnDestroy() {
         this.breakpointObserverService.killObservable();
     }
 
-    dummyAction() {}
+    deleteItems() {
+        console.log(this.selectedItems);
+    }
 
-    test(event: any) {
+    switchTableMode(event: any) {
         console.log(event);
     }
 
