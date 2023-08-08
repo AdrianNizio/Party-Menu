@@ -165,13 +165,8 @@
             "extends": ["plugin:@ngrx/recommended"]
         }
     ],
-    "extends": [
-        "eslint:recommended",
-        "prettier",
-        "plugin:@typescript-eslint/strict-type-checked",
-        "plugin:@typescript-eslint/stylistic-type-checked"
-    ],
-    "plugins": ["prettier"],
+    "extends": ["eslint:recommended", "prettier"],
+    "plugins": ["@typescript-eslint", "prettier"],
     "rules": {
         "prettier/prettier": ["error"],
         "@typescript-eslint/explicit-function-return-type": "off"

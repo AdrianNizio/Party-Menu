@@ -1,4 +1,5 @@
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { CocktailCardComponent } from './core/features/menus/cocktails/cocktail-card/cocktail-card.component';
 import { CocktailTextComponent } from './core/features/menus/cocktails/cocktail-card/cocktail-text/cocktail-text.component';
@@ -66,6 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) {
             },
         }),
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         HttpClientModule,
         MaterialModule,
