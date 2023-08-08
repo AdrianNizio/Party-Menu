@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
-import { BreakpointObserverService } from 'src/app/services/breakpoint-observer.service';
+import { BreakpointObserverService } from 'src/app/shared/services/breakpoint-observer.service';
 
 @Component({
     selector: 'app-add-new-recipe-form',
@@ -39,7 +39,7 @@ export class AddNewRecipeFormComponent implements OnInit {
         this.myStepper.next();
     }
 
-    submitForm(){
-        console.log(this.addNewRecipeForm)
+    submitForm() {
+        console.log(this.addNewRecipeForm);
     }
 }

@@ -1,9 +1,9 @@
 import { OnInit } from '@angular/core';
 import { inject } from '@angular/core';
 import { Component } from '@angular/core';
-import { BackendAccessService } from 'src/app/services/backend-access-service.service';
-import { Cocktail } from 'src/app/constants/models/cocktail';
 import { SelectionModel } from '@angular/cdk/collections';
+import { Cocktail } from 'src/app/shared/constants/models/cocktail';
+import { BackendAccessService } from 'src/app/shared/services/backend-access-service.service';
 
 @Component({
     selector: 'app-table-with-items',

@@ -1,10 +1,10 @@
 import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
-import { TableModes } from 'src/app/constants/enums/table-modes';
-import { BreakpointObserverService } from 'src/app/services/breakpoint-observer.service';
-import { DropdownItem } from 'src/app/constants/models/dropdown-item';
 import { Router } from '@angular/router';
-import { Cocktail } from 'src/app/constants/models/cocktail';
+import { TableModes } from 'src/app/shared/constants/enums/table-modes';
+import { Cocktail } from 'src/app/shared/constants/models/cocktail';
+import { DropdownItem } from 'src/app/shared/constants/models/dropdown-item';
+import { BreakpointObserverService } from 'src/app/shared/services/breakpoint-observer.service';
 
 @Component({
     selector: 'app-table-actions',
@@ -31,7 +31,6 @@ export class TableActionsComponent implements OnInit, OnDestroy {
             value: TableModes.Recipes,
         },
     ];
-
 
     constructor(private breakpointObserverService: BreakpointObserverService) {}
 
