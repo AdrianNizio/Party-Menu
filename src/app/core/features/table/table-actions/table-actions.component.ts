@@ -5,6 +5,7 @@ import { DropdownItem } from 'src/app/shared/constants/models/dropdown-item';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { TableModes } from 'src/app/shared/constants/enums/table-modes';
+import { MatSelectChange } from '@angular/material/select';
 @Component({
     selector: 'app-table-actions',
     styleUrls: ['./table-actions.component.scss'],
@@ -48,7 +49,7 @@ export class TableActionsComponent implements OnInit, OnDestroy {
         console.log(this.selectedItems);
     }
 
-    switchTableMode(event: Event): void {
+    switchTableMode(event: MatSelectChange): void {
         console.log(event);
     }
 
