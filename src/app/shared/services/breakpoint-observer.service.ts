@@ -1,6 +1,6 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
 import { Injectable, inject } from '@angular/core';
-import { Observable, Subject, takeUntil, map } from 'rxjs';
+import { Observable, Subject, map, takeUntil } from 'rxjs';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Injectable({
     providedIn: 'root',
@@ -18,7 +18,7 @@ export class BreakpointObserverService {
         );
     }
 
-    killObservable() {
+    killObservable(): void {
         this.destroyed.next();
         this.destroyed.complete();
     }

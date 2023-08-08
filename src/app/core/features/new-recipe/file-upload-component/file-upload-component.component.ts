@@ -1,7 +1,7 @@
 import { Component, Inject, Input } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
+import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-file-upload-component',
@@ -30,5 +30,5 @@ export class FileUploadComponentComponent {
         }
     }
 
-    upload() {}
+    upload(): void {}
 }

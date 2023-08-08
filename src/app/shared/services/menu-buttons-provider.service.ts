@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Button } from '../constants/models/main-menu-buttons';
 import { AppRoutes } from '../constants/enums/app-routes';
+import { Button } from '../constants/models/main-menu-buttons';
 import { ButtonsByUrlLookupTable } from '../constants/models/lookup-table';
+import { Injectable } from '@angular/core';
 
 @Injectable({
     providedIn: 'root',
@@ -121,7 +121,7 @@ export class MenuButtonsProviderService {
         'view-menus-menu': this.dishMenuButtons,
     };
 
-    getButtonsByUrl(url?: string) {
+    getButtonsByUrl(url?: string): Button[] {
         if (url && this.buttonsByUrlLookupTable[url]) {
             return this.buttonsByUrlLookupTable[url];
         } else {

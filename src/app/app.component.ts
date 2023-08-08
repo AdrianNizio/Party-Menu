@@ -1,7 +1,7 @@
+import { ChildrenOutletContexts, Data } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ChildrenOutletContexts } from '@angular/router';
-import { slider } from './route-animations';
 import { TranslateService } from '@ngx-translate/core';
+import { slider } from './route-animations';
 
 @Component({
     animations: [slider],
@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
     title = 'cocktails';
     val: boolean;
 
-    constructor(translate: TranslateService, private contexts: ChildrenOutletContexts) {
+    constructor(translate: TranslateService, private readonly contexts: ChildrenOutletContexts) {
         // this language will be used as a fallback when a translation isn't found in the current language
         translate.setDefaultLang('en');
 
@@ -21,16 +21,16 @@ export class AppComponent implements OnInit {
         translate.use('en');
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         // eslint-disable-next-line no-undef
         sessionStorage.setItem('isMixologistMode', 'false');
     }
 
-    prepareRoute() {
+    prepareRoute(): Data | undefined {
         return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
     }
 
-    toggle() {
+    toggle(): boolean {
         this.val = !this.val;
         return this.val;
     }

@@ -1,6 +1,5 @@
-import { TestBed } from '@angular/core/testing';
-
 import { BreakpointObserverService } from './breakpoint-observer.service';
+import { TestBed } from '@angular/core/testing';
 
 describe('BreakpointObserverService', () => {
     let service: BreakpointObserverService;

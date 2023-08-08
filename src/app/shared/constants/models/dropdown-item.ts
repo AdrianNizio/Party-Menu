@@ -1,4 +1,4 @@
 export interface DropdownItem {
-    value: string | number;
+    value: number | string;
     translationKey: string;
 }

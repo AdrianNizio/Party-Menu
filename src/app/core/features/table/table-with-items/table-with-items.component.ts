@@ -1,10 +1,7 @@
-import { OnInit } from '@angular/core';
-import { inject } from '@angular/core';
-import { Component } from '@angular/core';
-import { SelectionModel } from '@angular/cdk/collections';
-import { Cocktail } from 'src/app/shared/constants/models/cocktail';
+import { Component, OnInit, inject } from '@angular/core';
 import { BackendAccessService } from 'src/app/shared/services/backend-access-service.service';
-
+import { Cocktail } from 'src/app/shared/constants/models/cocktail';
+import { SelectionModel } from '@angular/cdk/collections';
 @Component({
     selector: 'app-table-with-items',
     styleUrls: ['./table-with-items.component.scss'],
@@ -15,23 +12,23 @@ export class TableWithItemsComponent implements OnInit {
     selection = new SelectionModel<Cocktail>(true, []);
 
     displayedColumns: string[] = ['select', 'name', 'preparationTime', 'difficulty', 'ingredients', 'type'];
-    private backendAccessService = inject(BackendAccessService);
+    private readonly backendAccessService = inject(BackendAccessService);
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.backendAccessService.getCocktailsMenu().subscribe((cocktails) => {
             this.cocktails = cocktails;
         });
     }
 
     /** Whether the number of selected elements matches the total number of rows. */
-    isAllSelected() {
+    isAllSelected(): boolean {
         const numSelected = this.selection.selected.length;
         const numRows = this.cocktails.length;
         return numSelected === numRows;
     }
 
     /** Selects all rows if they are not all selected; otherwise clear selection. */
-    toggleAllRows() {
+    toggleAllRows(): void {
         if (this.isAllSelected()) {
             this.selection.clear();
             return;

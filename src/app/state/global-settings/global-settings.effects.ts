@@ -1,17 +1,19 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { withLatestFrom } from 'rxjs/operators';
-import { Store } from '@ngrx/store';
+import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { AppState } from '../app.state';
+import { Injectable } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Injectable()
 export class TodoEffects {
-    constructor(private actions$: Actions, private store: Store<AppState>) {}
-
     dummyEffect$ = createEffect(
         () => {
-            return this.actions$.pipe(ofType('dummy'), withLatestFrom(this.store.select('dummySelector')));
+            return this.actions$.pipe(
+                ofType('dummy'),
+                concatLatestFrom(() => this.store.select('dummySelector'))
+            );
         },
         { dispatch: false }
     );
+
+    constructor(private readonly actions$: Actions, private readonly store: Store<AppState>) {}
 }

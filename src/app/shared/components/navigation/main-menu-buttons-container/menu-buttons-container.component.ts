@@ -1,9 +1,9 @@
-import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { Button } from 'src/app/shared/constants/models/main-menu-buttons';
+import { Location } from '@angular/common';
+import { MenuButtonsProviderService } from 'src/app/shared/services/menu-buttons-provider.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Button } from 'src/app/shared/constants/models/main-menu-buttons';
-import { MenuButtonsProviderService } from 'src/app/shared/services/menu-buttons-provider.service';
 
 @Component({
     selector: 'app-menu-buttons-container',
@@ -17,15 +17,15 @@ export class MenuButtonsContainerComponent implements OnInit, OnDestroy {
     subscription = new Subscription();
     buttons: Button[] = [];
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.buttons = this.menuButtonsProviderService.getButtonsByUrl(this.location.path().replace(/^\/+|\/+$/g, ''));
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         this.subscription.unsubscribe();
     }
 
-    navigateToRoute(buttonData: Button) {
+    navigateToRoute(buttonData: Button): void {
         this.router.navigate([buttonData.route]);
         if (buttonData.navigateData) {
             this.buttons = this.menuButtonsProviderService[buttonData.navigateData as keyof MenuButtonsProviderService] as Button[];

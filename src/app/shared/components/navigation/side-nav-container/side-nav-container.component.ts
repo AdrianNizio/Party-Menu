@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Router } from '@angular/router';
 import { Button } from 'src/app/shared/constants/models/main-menu-buttons';
 import { MenuButtonsProviderService } from 'src/app/shared/services/menu-buttons-provider.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-side-nav-container',
@@ -13,11 +13,11 @@ export class SideNavContainerComponent implements OnInit {
     menuButtonsProviderService = inject(MenuButtonsProviderService);
     router = inject(Router);
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.buttons = this.menuButtonsProviderService.sidebarSpecificButtons.concat(this.menuButtonsProviderService.sharedNavigationButtons);
     }
 
-    navigateToRoute(buttonData: Button) {
+    navigateToRoute(buttonData: Button): void {
         this.router.navigate([buttonData.route]);
     }
 }

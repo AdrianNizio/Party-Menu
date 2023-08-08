@@ -1,14 +1,13 @@
-import { NgFor } from '@angular/common';
 import { Component, Inject, OnInit, inject } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule, MatCheckboxChange } from '@angular/material/checkbox';
-import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
 import { ActivatedRoute } from '@angular/router';
-import { fader } from 'src/app/route-animations';
 import { AppRoutes } from 'src/app/shared/constants/enums/app-routes';
-import { Cocktail } from 'src/app/shared/constants/models/cocktail';
 import { BackendAccessService } from 'src/app/shared/services/backend-access-service.service';
-
+import { Cocktail } from 'src/app/shared/constants/models/cocktail';
+import { MatButtonModule } from '@angular/material/button';
+import { NgFor } from '@angular/common';
+import { fader } from 'src/app/route-animations';
 @Component({
     animations: [fader],
     selector: 'app-cocktails-menu',
@@ -18,12 +17,12 @@ import { BackendAccessService } from 'src/app/shared/services/backend-access-ser
 export class CocktailsMenuComponent implements OnInit {
     dialog = inject(MatDialog);
     route = inject(ActivatedRoute);
-
-    private backendAccessService = inject(BackendAccessService);
     cocktails: Cocktail[] = [];
     isMixologistMode: boolean = false;
 
-    ngOnInit() {
+    private readonly backendAccessService = inject(BackendAccessService);
+
+    ngOnInit(): void {
         this.backendAccessService.getCocktailsMenu().subscribe((cocktails) => {
             this.cocktails = cocktails;
         });
@@ -35,7 +34,7 @@ export class CocktailsMenuComponent implements OnInit {
         });
     }
 
-    scrollToCocktail(cocktailTitle: string) {
+    scrollToCocktail(cocktailTitle: string): void {
         const cocktailCard = document.getElementById(cocktailTitle);
 
         if (cocktailCard) {
@@ -58,7 +57,7 @@ interface cocktailsIngredientWithCount {
     checked?: boolean;
 }
 
-type cocktailsIngredientWithCountKeys = 'name' | 'count' | 'checked';
+type cocktailsIngredientWithCountKeys = 'checked' | 'count' | 'name';
 @Component({
     imports: [MatDialogModule, MatButtonModule, MatCheckboxModule, NgFor],
     selector: 'app-shopping-list-dialog',
@@ -69,11 +68,11 @@ export class ShoppingListDialog implements OnInit {
     cocktailsIngredients: cocktailsIngredientWithCount[] = [];
     constructor(public dialogRef: MatDialogRef<ShoppingListDialog>, @Inject(MAT_DIALOG_DATA) public data: Cocktail[]) {}
 
-    ngOnInit() {
+    ngOnInit(): void {
         if (sessionStorage.getItem('cocktailsIngredients')) {
             this.cocktailsIngredients = JSON.parse(sessionStorage.getItem('cocktailsIngredients') || '');
         } else {
-            let ingredientsWithCounts: cocktailsIngredientWithCount = {} as cocktailsIngredientWithCount;
+            const ingredientsWithCounts: cocktailsIngredientWithCount = {} as cocktailsIngredientWithCount;
             this.countIngredientRepetitions(ingredientsWithCounts);
             this.createArrayOfObjectsFromIngredientCounts(ingredientsWithCounts);
             sessionStorage.setItem('cocktailsIngredients', JSON.stringify(this.cocktailsIngredients));
@@ -95,7 +94,7 @@ export class ShoppingListDialog implements OnInit {
         return ingredientsWithCounts;
     }
 
-    createArrayOfObjectsFromIngredientCounts(ingredientsWithCounts: cocktailsIngredientWithCount) {
+    createArrayOfObjectsFromIngredientCounts(ingredientsWithCounts: cocktailsIngredientWithCount): void {
         const ingredientCountArray = Object.entries(ingredientsWithCounts).map(([count, name]) => ({
             count,
             name,
@@ -103,7 +102,7 @@ export class ShoppingListDialog implements OnInit {
         this.cocktailsIngredients = ingredientCountArray;
     }
 
-    saveCheckboxState(ingredientName: string, event: MatCheckboxChange) {
+    saveCheckboxState(ingredientName: string, event: MatCheckboxChange): void {
         const foundObject = this.cocktailsIngredients.find((obj) => obj.name === ingredientName);
         if (foundObject) {
             foundObject.checked = event.checked;

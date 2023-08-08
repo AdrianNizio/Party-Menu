@@ -1,21 +1,20 @@
 import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
+import { BreakpointObserverService } from 'src/app/shared/services/breakpoint-observer.service';
+import { Cocktail } from 'src/app/shared/constants/models/cocktail';
+import { DropdownItem } from 'src/app/shared/constants/models/dropdown-item';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { TableModes } from 'src/app/shared/constants/enums/table-modes';
-import { Cocktail } from 'src/app/shared/constants/models/cocktail';
-import { DropdownItem } from 'src/app/shared/constants/models/dropdown-item';
-import { BreakpointObserverService } from 'src/app/shared/services/breakpoint-observer.service';
-
 @Component({
     selector: 'app-table-actions',
     styleUrls: ['./table-actions.component.scss'],
     templateUrl: './table-actions.component.html',
 })
 export class TableActionsComponent implements OnInit, OnDestroy {
-    router = inject(Router);
-
     @Input() selectedItems: Cocktail[] = [];
     @Input() drawer: MatDrawer;
+
+    router = inject(Router);
 
     isScreenWiderThanMd: boolean = true;
     readonly TableModes = TableModes;
@@ -32,28 +31,28 @@ export class TableActionsComponent implements OnInit, OnDestroy {
         },
     ];
 
-    constructor(private breakpointObserverService: BreakpointObserverService) {}
+    constructor(private readonly breakpointObserverService: BreakpointObserverService) {}
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.breakpointObserverService.getMediumBreakpoint().subscribe((value) => {
             this.isScreenWiderThanMd = value;
         });
         console.log(this.tableMode);
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         this.breakpointObserverService.killObservable();
     }
 
-    deleteItems() {
+    deleteItems(): void {
         console.log(this.selectedItems);
     }
 
-    switchTableMode(event: any) {
+    switchTableMode(event: Event): void {
         console.log(event);
     }
 
-    navigateToCreationMenu() {
+    navigateToCreationMenu(): void {
         if (this.tableMode === TableModes.Recipes) {
             this.router.navigate(['add-new-recipe-menu']);
         } else {

@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
     name: 'translateDifficulty',
 })
 export class TranslateDifficultyPipe implements PipeTransform {
-    private difficultyTranslationKeysTable: { [key: number]: string } = {
+    private readonly difficultyTranslationKeysTable: { [key: number]: string } = {
         0: 'Easy',
         1: 'Medium',
         2: 'Hard',

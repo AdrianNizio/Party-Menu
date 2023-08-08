@@ -10,13 +10,13 @@ export class AddIngredientsComponent {
     @Input() addNewRecipeForm: FormGroup;
     @Input() isScreenWiderThanMd: boolean;
 
-    constructor(private formBuilder: FormBuilder) {}
+    constructor(private readonly formBuilder: FormBuilder) {}
 
-    get ingredients() {
+    get ingredients(): FormArray<FormGroup> {
         return this.addNewRecipeForm.get('recipeListOfIngredients') as unknown as FormArray;
     }
 
-    addIngredient() {
+    addIngredient(): void {
         const newIngredient = this.formBuilder.group({
             ingredient: new FormControl('', Validators.required),
             ingredientType: new FormControl('', Validators.required),
@@ -27,7 +27,7 @@ export class AddIngredientsComponent {
         this.ingredients.push(newIngredient);
     }
 
-    removeIngredient(index: number) {
+    removeIngredient(index: number): void {
         this.ingredients.removeAt(index);
     }
 }

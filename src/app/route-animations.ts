@@ -1,4 +1,4 @@
-import { trigger, transition, style, query, group, animate, keyframes } from '@angular/animations';
+import { AnimationGroupMetadata, AnimationQueryMetadata, animate, group, keyframes, query, style, transition, trigger } from '@angular/animations';
 
 export const fader = trigger('routeAnimations', [
     transition('isLeft <=> isRight', [
@@ -16,7 +16,7 @@ export const stepper = trigger('routeAnimations', [
     ]),
 ]);
 
-function slideTo(direction: string) {
+function slideTo(direction: string): (AnimationGroupMetadata | AnimationQueryMetadata)[] {
     const optional = { optional: true };
     return [
         query(

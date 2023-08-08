@@ -1,6 +1,5 @@
-import { TestBed } from '@angular/core/testing';
-
 import { MenuButtonsProviderService } from './menu-buttons-provider.service';
+import { TestBed } from '@angular/core/testing';
 
 describe('MenuButtonsProviderService', () => {
     let service: MenuButtonsProviderService;

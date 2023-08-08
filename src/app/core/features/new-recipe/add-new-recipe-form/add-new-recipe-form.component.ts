@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, inject } from '@angular/core';
-import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
-import { MatStepper } from '@angular/material/stepper';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BreakpointObserverService } from 'src/app/shared/services/breakpoint-observer.service';
+import { MatStepper } from '@angular/material/stepper';
 
 @Component({
     selector: 'app-add-new-recipe-form',
@@ -10,7 +10,6 @@ import { BreakpointObserverService } from 'src/app/shared/services/breakpoint-ob
 })
 export class AddNewRecipeFormComponent implements OnInit {
     @ViewChild('stepper') myStepper: MatStepper;
-    private breakpointObserverService = inject(BreakpointObserverService);
 
     isScreenWiderThanMd: boolean = true;
 
@@ -25,21 +24,23 @@ export class AddNewRecipeFormComponent implements OnInit {
         recipeTitle: new FormControl('', Validators.required),
     });
 
-    ngOnInit() {
+    private readonly breakpointObserverService = inject(BreakpointObserverService);
+
+    ngOnInit(): void {
         this.breakpointObserverService.getMediumBreakpoint().subscribe((value) => {
             this.isScreenWiderThanMd = value;
         });
     }
 
-    stepperTriggerPrevious() {
+    stepperTriggerPrevious(): void {
         this.myStepper.previous();
     }
 
-    stepperTriggerNext() {
+    stepperTriggerNext(): void {
         this.myStepper.next();
     }
 
-    submitForm() {
+    submitForm(): void {
         console.log(this.addNewRecipeForm);
     }
 }
