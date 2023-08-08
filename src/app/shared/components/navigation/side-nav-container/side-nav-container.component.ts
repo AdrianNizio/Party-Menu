@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Button } from 'src/app/constants/models/main-menu-buttons';
-import { MenuButtonsProviderService } from 'src/app/services/menu-buttons-provider.service';
+import { Button } from 'src/app/shared/constants/models/main-menu-buttons';
+import { MenuButtonsProviderService } from 'src/app/shared/services/menu-buttons-provider.service';
 
 @Component({
     selector: 'app-side-nav-container',

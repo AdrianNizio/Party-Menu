@@ -1,13 +1,13 @@
-import { Component, Inject, OnInit, inject } from '@angular/core';
-import { fader } from 'src/app/route-animations';
-import { BackendAccessService } from 'src/app/services/backend-access-service.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
-import { Cocktail } from 'src/app/constants/models/cocktail';
 import { NgFor } from '@angular/common';
+import { Component, Inject, OnInit, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCheckboxModule, MatCheckboxChange } from '@angular/material/checkbox';
+import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { AppRoutes } from 'src/app/constants/enums/app-routes';
+import { fader } from 'src/app/route-animations';
+import { AppRoutes } from 'src/app/shared/constants/enums/app-routes';
+import { Cocktail } from 'src/app/shared/constants/models/cocktail';
+import { BackendAccessService } from 'src/app/shared/services/backend-access-service.service';
 
 @Component({
     animations: [fader],

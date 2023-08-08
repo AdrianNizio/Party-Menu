@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CocktailsMenuComponent } from './components/menus/cocktails/cocktails-menu/cocktails-menu.component';
-import { WelcomeScreenComponent } from './components/welcome-screen/welcome-screen.component';
-import { AddNewRecipeFormComponent } from './components/new-recipe/add-new-recipe-form/add-new-recipe-form.component';
-import { TableWithItemsComponent } from './components/table/table-with-items/table-with-items.component';
-import { FoodMenuComponent } from './components/menus/food/food-menu/food-menu.component';
-import { AppRoutes } from './constants/enums/app-routes';
+import { CocktailsMenuComponent } from './core/features/menus/cocktails/cocktails-menu/cocktails-menu.component';
+import { FoodMenuComponent } from './core/features/menus/food/food-menu/food-menu.component';
+import { AddNewRecipeFormComponent } from './core/features/new-recipe/add-new-recipe-form/add-new-recipe-form.component';
+import { TableWithItemsComponent } from './core/features/table/table-with-items/table-with-items.component';
+import { WelcomeScreenComponent } from './core/features/welcome-screen/welcome-screen.component';
+import { AppRoutes } from './shared/constants/enums/app-routes';
 
 const routes: Routes = [
     {

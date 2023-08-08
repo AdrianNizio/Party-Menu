@@ -1,39 +1,41 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
     "angularCompilerOptions": {
-        "enableI18nLegacyMessageIdFormat": false,
-        "strictInjectionParameters": true,
-        "strictInputAccessModifiers": true,
-        "strictTemplates": true,
         "extendedDiagnostics": {
             "checks": {
                 "invalidBananaInBox": "error",
-                "nullishCoalescingNotNullable": "error"
+                "nullishCoalescingNotNullable": "error",
+                "textAttributeNotBinding": "error",
+                "missingNgForOfLet": "error",
+                "suffixNotSupported": "error",
+                "missingControlFlowDirective": "error"
             },
             "defaultCategory": "error"
         },
-        "fullTemplateTypeCheck": true
+        "strictTemplates": true,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true
     },
     "compileOnSave": false,
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
         "baseUrl": "./",
-        "outDir": "./dist/out-tsc",
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-        "noImplicitOverride": true,
-        "noPropertyAccessFromIndexSignature": true,
-        "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true,
-        "sourceMap": true,
         "declaration": false,
         "downlevelIteration": true,
         "experimentalDecorators": true,
-        "moduleResolution": "node",
         "importHelpers": true,
-        "strictPropertyInitialization": false,
-        "target": "ES2022",
+        "lib": ["ES2022", "dom"],
         "module": "ES2022",
-        "useDefineForClassFields": false,
-        "lib": ["ES2022", "dom"]
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "outDir": "./dist/out-tsc",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": false,
+        "sourceMap": true,
+        "target": "ES2022",
+        "typeRoots": ["node_modules/@types"],
+        "useDefineForClassFields": false
     }
 }

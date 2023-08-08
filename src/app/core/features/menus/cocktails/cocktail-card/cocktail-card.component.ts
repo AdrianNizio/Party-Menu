@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Cocktail } from 'src/app/constants/models/cocktail';
+import { Cocktail } from 'src/app/shared/constants/models/cocktail';
 
 @Component({
     animations: [],
